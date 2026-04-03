@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archivio Progetti Leaflet - Studenti</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .project-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        /* Placeholder per l'anteprima se non vuoi catturare screenshot veri */
+        .map-placeholder {
+            background: linear-gradient(45deg, #e3f2fd 25%, #bbdefb 25%, #bbdefb 50%, #e3f2fd 50%, #e3f2fd 75%, #bbdefb 75%, #bbdefb 100%);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Progetti Cartografici Digitali</h1>
+            <p class="text-gray-600 italic">Laboratorio di Web Mapping - Corso di Laurea UniRoma2</p>
+            
+            <div class="mt-8 max-w-md mx-auto">
+                <input type="text" id="searchInput" placeholder="Cerca studente o progetto..." 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+        </header>
+
+        <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </div>
+
+    <script>
+        // --- CONFIGURAZIONE: Aggiungi qui le cartelle dei tuoi studenti ---
+        const projects = [
+            { id: "studente-rossi", name: "Mario Rossi", description: "Analisi mobilità urbana" },
+            { id: "studente-bianchi", name: "Laura Bianchi", description: "Mappatura spazi verdi" },
+            { id: "studente-verdi", name: "Giuseppe Verdi", description: "Evoluzione storica quartieri" },
+            // Aggiungi gli altri...
+        ];
+
+        const gallery = document.getElementById('gallery');
+        const searchInput = document.getElementById('searchInput');
+
+        function renderProjects(filter = '') {
+            gallery.innerHTML = '';
+            const filtered = projects.filter(p => 
+                p.name.toLowerCase().includes(filter.toLowerCase()) || 
+                p.description.toLowerCase().includes(filter.toLowerCase())
+            );
+
+            filtered.forEach(p => {
+                const card = `
+                    <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <div class="h-40 map-placeholder flex items-center justify-center">
+                            <svg class="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m6 13l5.447-2.724a1 1 0 00.553-.894V5.618a1 1 0 00-1.447-.894L15 7m-6 13V7m6 10V7"></path>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">${p.name}</h3>
+                            <p class="text-sm text-gray-600 mb-4">${p.description}</p>
+                            <a href="./${p.id}/" class="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition">
+                                Apri Progetto
+                            </a>
+                        </div>
+                    </div>
+                `;
+                gallery.innerHTML += card;
+            });
+        }
+
+        searchInput.addEventListener('input', (e) => renderProjects(e.target.value));
+        
+        // Inizializzazione
+        renderProjects();
+    </script>
+</body>
+</html>
