@@ -52,13 +52,18 @@
             );
 
             filtered.forEach(p => {
+                // Definiamo il percorso dell'immagine
+            const imgPath = `./${p.id}/preview.png`;
                 const card = `
                     <div class="project-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
-                        <div class="h-40 map-placeholder flex items-center justify-center">
-                            <svg class="w-12 h-12 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m6 13l5.447-2.724a1 1 0 00.553-.894V5.618a1 1 0 00-1.447-.894L15 7m-6 13V7m6 10V7"></path>
-                            </svg>
-                        </div>
+                        <div class="h-48 overflow-hidden bg-gray-200">
+                        <img src="${imgPath}" 
+                             alt="Anteprima ${p.name}" 
+                             class="w-full h-full object-cover"
+                             onerror="this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-blue-50 text-blue-300\'><svg class=\'w-12 h-12\' fill=\'none\' stroke=\'currentColor\' viewBox=\'0 0 24 24\'><path stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m6 13l5.447-2.724a1 1 0 00.553-.894V5.618a1 1 0 00-1.447-.894L15 7m-6 13V7m6 10V7\'></path></svg></div>';">
+                    </div>
+                        
+                        
                         <div class="p-6">
                             <h3 class="text-xl font-bold text-gray-800 mb-2">${p.name}</h3>
                             <p class="text-sm text-gray-600 mb-4">${p.description}</p>
