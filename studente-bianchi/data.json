@@ -1,0 +1,309 @@
+{
+  "itinerari": [
+    {
+      "id": "bramante_codice",
+      "nome": "Il codice architettonico di Donato Bramante",
+      "sottotitolo": "Un viaggio immersivo tra geometria, luce e ambizione papale (Roma, 1499-1514)",
+      "personaggio": {
+        "nome": "Donato Bramante",
+        "anni": "1444-1514",
+        "professione": "Architetto e Pittore",
+        "nazionalita": "Italiana",
+        "biografia_breve": "Formatosi a Urbino, Bramante assorbe la passione per la prospettiva. A Roma, a contatto con le rovine classiche, il suo stile subisce una trasformazione radicale abbracciando un rigore monumentale. È lui a gettare le basi della nuova Basilica di San Pietro, guadagnandosi il soprannome di 'Maestro Ruinante'.",
+        "immagine": "assets/personaggi/bramante.jpg",
+        "opere_correlate": [
+          "Tempietto di San Pietro in Montorio (1502)",          
+          "Via Giulia (1508)",
+          "Chiostro del Bramante",
+          "Cortile del Belvedere (1504)"
+        ]
+      },
+      "tema": "Architettura Rinascimentale e Restauratio Imperii",
+      "categoria": "Arte e Storia",
+      "durata_totale_ore": 8,
+      "difficolta": "facile",
+      "immagine_copertina": "https://michelangelobuonarrotietornato.com/wp-content/uploads/2021/01/cq5dam.thumbnail.cropped.1000.563-1-2.jpeg",
+      "distanza_totale_km": 3.8,
+      "periodo_consigliato": "Primavera/Autunno (temperature miti e luce ottimale)",
+      "stagione_migliore": ["marzo", "aprile", "maggio", "settembre", "ottobre"],
+      "descrizione": "Un percorso che trasforma l'utente da semplice turista a testimone della 'Restauratio Imperii'. Vivi in prima persona il passaggio dalla Roma medievale al rigore monumentale del Rinascimento maturo, seguendo il codice matematico e spirituale di Donato Bramante dall'alba al tramonto.",
+      "note_logistiche": "Iniziare all'alba richiede di trovarsi al Gianicolo presto. Il percorso prevede spostamenti a piedi tra centro e Vaticano. Prevedere una lunga pausa pranzo dopo Via Giulia.",
+      "accessibilita": "Le pendenze del Gianicolo (Tappa 1) e alcune aree sanpietrinate possono risultare faticose. Le altre tappe sono facilmente accessibili in piano o tramite ascensori dove presenti.",
+      "costo_stimato": "Gratuito (eccetto mostre temporanee al Chiostro del Bramante)",
+      "tappe": [
+        {
+          "numero": 1,
+          "poi_id": "tempietto_san_pietro",
+          "orario_consigliato": "06:30",
+          "momento_giornata": "alba",
+          "durata_visita_min": 45,
+          "coordinate": [41.8881, 12.4665],
+          "nome": "Tempietto di San Pietro in Montorio",
+          "descrizione_breve": "Respira la perfezione del Rinascimento alle prime luci dell'alba. Nel silenzio del Gianicolo, le proporzioni auree del Tempietto si svelano.",
+          "indicazioni_arrivo": "Raggiungere il Gianicolo via Bus 115 o 870 fino a scendere a San Pietro in Montorio. Accedere al cortile del convento.",
+          "esperienza_culturale": {
+            "musica": {
+              "movimento": "I. La perfezione circolare all'alba",
+              "brano_completo": "Sicut Cervus",
+              "compositore": "Giovanni Pierluigi da Palestrina",
+              "durata_sec": 200,
+              "tonalita": "Sol maggiore",
+              "organico": "Coro a cappella a 4 voci",
+              "anno_composizione": 1584,
+              "descrizione_musicale": "Una polifonia vocale pura e perfetta. Le voci si intrecciano con rigore matematico creando un'armonia celestiale, ideale per il silenzio dell'alba e per la sacralità del luogo.",
+              "spotify_url": "http://googleusercontent.com/spotify.com/1",
+              "youtube_url": "https://www.youtube.com/watch?v=example1",
+              "note_ascolto": "Ascoltare posizionandosi esattamente al centro del cortile per percepire la geometria radiale del suono e dello spazio."
+            },
+            "letteratura": {
+              "citazione": "La bellezza è una certa convenienza e ragionevole armonia di tutte le parti, in guisa che non vi si possa aggiugnere, o diminuire, o mutare cosa alcuna...",
+              "autore": "Leon Battista Alberti",
+              "opera": "De re aedificatoria",
+              "anno": 1450,
+              "contesto": "Trattato fondamentale che ha ispirato lo stesso Bramante nella ricerca delle proporzioni auree perfette."
+            },
+            "atmosfera": {
+              "momento": "alba",
+              "luce": "Luce fredda dell'alba che vira all'oro",
+              "suoni_ambiente": [
+                "canto degli uccelli (passeri e gabbiani in lontananza)",
+                "fruscio del vento tra i pini",
+                "silenzio urbano assoluto"
+              ],
+              "temperatura_stimata": "12-15°C",
+              "affollamento": "minimo (orario pre-apertura turistica)",
+              "consiglio_fotografico": "Catturare i raggi radenti del sole che filtrano tra le colonne doriche del colonnato esterno.",
+              "emozione_target": "Raccoglimento, rivelazione, armonia assoluta"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Rinascimento maturo",
+              "architetti": ["Donato Bramante"],
+              "anno_costruzione": "1502",
+              "committente": "Ferdinando e Isabella di Spagna",
+              "descrizione": "Edificio a pianta centrale ispirato ai *martyria* paleocristiani e ai templi peripteri circolari romani. Uso canonico dell'ordine dorico."
+            }
+          },
+          "storia": "Costruito sul luogo in cui, secondo la tradizione, subì il martirio San Pietro (crocifisso a testa in giù).",
+          "curiosita": "Le metope del fregio dorico non raffigurano elementi pagani, ma gli strumenti liturgici cristiani, cristianizzando così l'architettura classica.",
+          "metadata": {
+            "accessibilita": "ingresso gratuito, cortile accessibile",
+            "orari_standard": "09:00-12:00 e 15:00-16:00 (l'alba è apprezzabile dai cancelli esterni o su accordo preventivo)",
+            "servizi": []
+          }
+        },
+        {
+          "numero": 2,
+          "poi_id": "via_giulia",
+          "orario_consigliato": "10:30",
+          "momento_giornata": "mattino",
+          "durata_visita_min": 60,
+          "coordinate": [41.8965, 12.4688],
+          "nome": "Via Giulia",
+          "descrizione_breve": "Il battito della Città Eterna si sveglia lungo il primo vero 'boulevard' moderno e prospettico.",
+          "indicazioni_arrivo": "Dal Gianicolo scendere a piedi verso Trastevere, attraversare Ponte Sisto per giungere direttamente su Via Giulia.",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "20 min",
+            "distanza_km": 1.5
+          },
+          "esperienza_culturale": {
+            "musica": {
+              "movimento": "II. L'energia della prospettiva urbana",
+              "brano_completo": "La Mourisque",
+              "compositore": "Tielman Susato",
+              "durata_sec": 140,
+              "tonalita": "Do maggiore",
+              "organico": "Ensemble di ottoni e percussioni antiche",
+              "anno_composizione": 1551,
+              "descrizione_musicale": "Un brano strumentale rinascimentale dal ritmo vivace e incalzante, perfetto per una passeggiata dinamica sul nuovo 'boulevard' papale.",
+              "spotify_url": "http://googleusercontent.com/spotify.com/2",
+              "youtube_url": "https://www.youtube.com/watch?v=example2",
+              "note_ascolto": "Iniziare l'ascolto appena attraversato Ponte Sisto, camminando a passo spedito verso nord."
+            },
+            "letteratura": {
+              "citazione": "Le strade di Roma son fatte per mostrare la grandezza e la magnificenza dei pontefici, per raddrizzare i torti delle vie vecchie e donare respiro ai pellegrini...",
+              "autore": "Cronache dell'epoca",
+              "opera": "Diari Romani",
+              "anno": 1510,
+              "contesto": "La celebrazione del rinnovamento urbanistico voluto da Giulio II."
+            },
+            "atmosfera": {
+              "momento": "mattino",
+              "luce": "Luce mattutina chiara e definita, ombre marcate sui palazzi",
+              "suoni_ambiente": [
+                "passi sui sampietrini",
+                "vociare dei residenti e artigiani locali",
+                "traffico leggero in lontananza"
+              ],
+              "temperatura_stimata": "18-20°C",
+              "affollamento": "moderato (cittadini e turisti)",
+              "consiglio_fotografico": "Sfruttare la prospettiva chilometrica della via mettendosi al centro della strada (attenzione ai veicoli).",
+              "emozione_target": "Vitalità, ammirazione prospettica, modernità"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Urbanistica Rinascimentale",
+              "architetti": ["Donato Bramante"],
+              "anno_costruzione": "1508",
+              "committente": "Papa Giulio II",
+              "descrizione": "Un tracciato rettilineo di circa un chilometro che taglia spietatamente il disordinato tessuto medievale della città."
+            }
+          },
+          "storia": "Creata per facilitare il flusso dei pellegrini verso San Pietro e creare un nuovo centro direzionale e finanziario per la Roma papale.",
+          "curiosita": "Lungo la via sono visibili gli enormi blocchi di travertino grezzo noti come i 'sofà di Via Giulia', le fondamenta mai completate dell'immenso Palazzo dei Tribunali progettato da Bramante.",
+          "metadata": {
+            "accessibilita": "Spazio pubblico sempre accessibile (suolo a sampietrini)",
+            "orari_standard": "24/7",
+            "servizi": ["caffetterie storiche", "negozi di antiquariato"]
+          }
+        },
+        {
+          "numero": 3,
+          "poi_id": "chiostro_bramante",
+          "orario_consigliato": "13:30",
+          "momento_giornata": "meriggio",
+          "durata_visita_min": 60,
+          "coordinate": [41.8999, 12.4715],
+          "nome": "Chiostro del Bramante",
+          "descrizione_breve": "Il sole allo zenit inonda di luce questa oasi segreta. Lasciati cullare dal ritmo ipnotico degli archi e dal gioco di ombre sui loggiati.",
+          "indicazioni_arrivo": "Dalla fine di Via Giulia, proseguire per 10 minuti tra i vicoli passando per Piazza Navona, fino ad arrivare a Santa Maria della Pace.",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "12 min",
+            "distanza_km": 0.9
+          },
+          "esperienza_culturale": {
+            "musica": {
+              "movimento": "III. Il rigore e la quiete meridiana",
+              "brano_completo": "Ricercare",
+              "compositore": "Francesco da Milano",
+              "durata_sec": 240,
+              "tonalita": "Varia",
+              "organico": "Liuto solo",
+              "anno_composizione": 1536,
+              "descrizione_musicale": "Un suono intimo, matematico e meditativo che si sposa con il ritmo architettonico degli archi, offrendo un perfetto distacco dal caos cittadino.",
+              "spotify_url": "http://googleusercontent.com/spotify.com/3",
+              "youtube_url": "https://www.youtube.com/watch?v=example3",
+              "note_ascolto": "Passeggiare lentamente sotto il porticato del piano terra seguendo il tempo del liuto."
+            },
+            "letteratura": {
+              "citazione": "Nessuna cosa è più bella dell'ordine e della proporzione.",
+              "autore": "Fra Luca Pacioli",
+              "opera": "De Divina Proportione",
+              "anno": 1498,
+              "contesto": "Il celebre trattato, illustrato in parte da Leonardo da Vinci, che stabilisce la matematica del bello nel Rinascimento."
+            },
+            "atmosfera": {
+              "momento": "meriggio",
+              "luce": "Sole allo zenit, ombre nette e contrastate sotto i porticati",
+              "suoni_ambiente": [
+                "silenzio rimbombante nel cortile",
+                "eco dei passi",
+                "chiacchiere ovattate dalla caffetteria"
+              ],
+              "temperatura_stimata": "22-25°C",
+              "affollamento": "medio (visitatori delle mostre)",
+              "consiglio_fotografico": "Catturare l'angolo del cortile dal loggiato superiore per esaltare la purezza della forma quadrata.",
+              "emozione_target": "Quiete, equilibrio geometrico, armonia intellettuale"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Rinascimento",
+              "architetti": ["Donato Bramante"],
+              "anno_costruzione": "1504",
+              "committente": "Cardinale Oliviero Carafa",
+              "descrizione": "Si articola su due ordini sovrapposti: porticato ionico al piano terra, loggiato corinzio alternato a pilastri al piano superiore."
+            }
+          },
+          "storia": "Fa parte del complesso di Santa Maria della Pace. È una delle prime opere romane in cui Bramante dimostra di aver pienamente assimilato la lezione dell'antichità classica.",
+          "curiosita": "Lungo il fregio del piano inferiore corre una continua iscrizione dedicatoria in lettere capitali romane, un espediente classico che ne sottolinea l'orizzontalità serena.",
+          "metadata": {
+            "accessibilita": "ingresso gratuito per la caffetteria/cortile; mostre a pagamento",
+            "orari_standard": "10:00-20:00",
+            "servizi": ["caffetteria interna", "bookshop d'arte", "toilette", "ascensore"]
+          }
+        },
+        {
+          "numero": 4,
+          "poi_id": "cortile_belvedere",
+          "orario_consigliato": "18:00",
+          "momento_giornata": "tramonto",
+          "durata_visita_min": 120,
+          "coordinate": [41.9048, 12.4545],
+          "nome": "Cortile del Belvedere e San Pietro",
+          "descrizione_breve": "Il sole cala infiammando la grandiosità della Roma papale. Goditi lo spettacolo teatrale dell'ambizione titanica di Bramante.",
+          "indicazioni_arrivo": "Dal Chiostro, attraversare Ponte Sant'Angelo e procedere lungo Via della Conciliazione fino ai Musei Vaticani.",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "25 min",
+            "distanza_km": 1.9
+          },
+          "esperienza_culturale": {
+            "musica": {
+              "movimento": "IV. La teatralità dell'infinito",
+              "brano_completo": "Canzon in Echo a 12",
+              "compositore": "Giovanni Gabrieli",
+              "durata_sec": 310,
+              "tonalita": "Fa maggiore",
+              "organico": "Ottoni divisi in cori spazializzati",
+              "anno_composizione": 1597,
+              "descrizione_musicale": "Musica monumentale per ottoni che gioca con la stereofonia e l'eco, ideale per riempire e far risuonare gli immensi spazi prospettici vaticani.",
+              "spotify_url": "http://googleusercontent.com/spotify.com/4",
+              "youtube_url": "https://www.youtube.com/watch?v=example4",
+              "note_ascolto": "Alzare il volume per farsi avvolgere dalla spazialità dei cori di ottoni che richiamano le immense piazze papali."
+            },
+            "letteratura": {
+              "citazione": "Egli fu di sì grande ingegno, e di sì alto spirito, che le sue opere fecero maravigliare il mondo, et egli meritò di esser chiamato Maestro Ruinante.",
+              "autore": "Giorgio Vasari",
+              "opera": "Le Vite de' più eccellenti pittori, scultori, e architettori",
+              "anno": 1550,
+              "contesto": "Vasari riconosce il genio distruttivo e costruttivo di Bramante, capace di smantellare l'antico per erigere la nuova meraviglia cristiana."
+            },
+            "atmosfera": {
+              "momento": "tramonto",
+              "luce": "Luce calda, dorata e rossastra del tramonto sui travertini",
+              "suoni_ambiente": [
+                "campane vaticane",
+                "chiacchiericcio diffuso della folla stanca ma ammirata"
+              ],
+              "temperatura_stimata": "17-19°C",
+              "affollamento": "alto (visitatori vaticani in uscita)",
+              "consiglio_fotografico": "Catturare la Pigna monumentale con la luce calda, o la fuga prospettica che collega i Palazzi Vaticani.",
+              "emozione_target": "Stupore, senso di eternità, grandiosità teatrale"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Rinascimento monumentale",
+              "architetti": ["Donato Bramante"],
+              "anno_costruzione": "1504",
+              "committente": "Papa Giulio II",
+              "descrizione": "Immenso cortile a terrazzamenti unito da scalinate scenografiche, ispirato esplicitamente agli antichi santuari romani (es. Palestrina)."
+            }
+          },
+          "storia": "Commissionato per collegare i Palazzi Vaticani con la preesistente Villa del Belvedere. La sua scala titanica pose le basi per la nuova concezione dello spazio papale.",
+          "curiosita": "Il cortile inferiore era progettato su una scala tale da ospitare tornei, finte battaglie navali e l'esotico serraglio di animali del Papa (tra cui il celebre elefante Annone).",
+          "metadata": {
+            "accessibilita": "ingresso tramite biglietto Musei Vaticani (€17)",
+            "orari_standard": "09:00-18:00 (ultimo ingresso 16:00)",
+            "servizi": ["museo", "bookshop", "guide turistiche", "punti ristoro interni"]
+          }
+        }
+      ],
+      "mappa_percorso": {
+        "colore_percorso": "#DAA520",
+        "stile_linea": "solid"
+      },
+      "consigli_pratici": [
+        "Portare scarpe molto comode: il tour completo sfiora i 6 km di passeggiata",
+        "Acquistare il biglietto per i Musei Vaticani (Tappa 4) con largo anticipo online",
+        "Scaricare offline i brani musicali o preparare una playlist Spotify",
+        "Pausa pranzo consigliata in area Campo de' Fiori / Piazza Navona (dopo Tappa 2)"
+      ],
+      "migliore_periodo_anno": "Marzo-Maggio per godere dei contrasti di luce e delle fioriture primaverili a Villa Giulia.",
+      "sconsigliato": [
+        "Piena estate (agosto) per via delle alte temperature durante le passeggiate lunghe",
+        "Giorni di chiusura o feste nazionali vaticane per l'impossibilità di visitare l'ultima tappa"
+      ],
+      "cosa_portare": [
+        "Smartphone carico con auricolari o cuffie (essenziali)",
+        "Powerbank per evitare di restare senza mappa a metà giornata",
+        "Borraccia (numerosi 'nasoni' sul percorso)",
+        "Occhiali da sole per i forti riverberi sui travertini"
+      ]
+    }
+  ]
+}

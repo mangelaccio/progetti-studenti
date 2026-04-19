@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Codice Architettonico di Donato Bramante</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           VARIABILI BRAMANTE (Colori e Font)
+           ========================================= */
+        :root {
+            --bg-body: #F8F9FA;
+            --bg-travertino: #F5F5DC;
+            --text-dark: #2b2b2b;
+            --text-gray: #6b6b6b;
+            --oro-bramante: #DAA520;
+            --oro-hover: #b8860b;
+            
+            --font-titoli: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            --font-testi: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: var(--font-testi);
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            overflow: hidden; /* Blocca lo scroll globale, scrollano solo i div interni */
+        }
+
+        /* =========================================
+           HEADER
+           ========================================= */
+        header {
+            background-color: var(--text-dark);
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-bottom: 3px solid var(--oro-bramante);
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: #fff;
+            font-family: var(--font-titoli);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i { color: var(--oro-bramante); }
+
+        .btn-home {
+            background-color: transparent;
+            color: var(--oro-bramante);
+            border: 1px solid var(--oro-bramante);
+            padding: 6px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn-home:hover { background-color: var(--oro-bramante); color: #fff; }
+
+        /* =========================================
+           VISTA 1: HOMEPAGE (Come da Foto 1 e 2)
+           ========================================= */
+        #view-home {
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .page-title { font-family: var(--font-titoli); font-size: 2.5rem; margin-bottom: 5px; }
+        .page-subtitle { color: var(--text-gray); font-style: italic; margin-bottom: 40px; }
+
+        #cards-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: left;
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+        }
+
+        .card-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-bottom: 4px solid var(--oro-bramante);
+        }
+
+        .badge-categoria {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--text-dark);
+            color: var(--oro-bramante);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .card-content { padding: 30px; }
+        .card-title { font-family: var(--font-titoli); font-size: 1.8rem; margin: 0 0 5px 0; }
+        .card-subtitle { color: var(--text-gray); font-style: italic; margin: 0 0 15px 0; }
+        .card-desc { line-height: 1.6; margin-bottom: 25px; }
+
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-bottom: 25px;
+        }
+        .stat { text-align: center; }
+        .stat i { color: var(--oro-bramante); font-size: 1.2rem; margin-bottom: 5px; }
+        .stat-val { font-weight: bold; font-size: 1.1rem; }
+        .stat-label { font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; }
+
+        .btn-start {
+            width: 100%;
+            background: var(--text-dark);
+            color: var(--oro-bramante);
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+        .btn-start:hover { background: var(--oro-hover); color: #fff; }
+
+        /* =========================================
+           VISTA 2: ITINERARIO (Come da Foto 3)
+           ========================================= */
+        #view-itinerary {
+            display: none; /* Flex attivato da JS */
+            height: calc(100vh - 60px);
+            width: 100%;
+        }
+
+        /* SIDEBAR SINISTRA (Timeline) */
+        #sidebar {
+            width: 25%;
+            background-color: #fff;
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar-title { font-family: var(--font-titoli); margin: 0 0 5px 0; font-size: 1.4rem; }
+        .sidebar-subtitle { font-size: 0.9rem; color: var(--text-gray); margin: 0; }
+
+        #timeline-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+
+        .timeline-item {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+        .timeline-item:hover { transform: translateX(5px); border-color: var(--oro-bramante); }
+        .timeline-item.current {
+            border-left: 5px solid var(--oro-bramante);
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .timeline-icon { color: var(--text-gray); width: 20px; text-align: center; }
+        .timeline-item.current .timeline-icon { color: var(--oro-bramante); }
+        .timeline-text strong { display: block; color: var(--text-dark); }
+        .timeline-text span { font-size: 0.9rem; color: var(--text-gray); }
+
+        /* AREA DESTRA (Mappa Top + Dettagli Bottom) */
+        #main-content {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Mappa 60% */
+        #map-container {
+            height: 60%;
+            width: 100%;
+            border-bottom: 3px solid var(--oro-bramante);
+        }
+        #map { height: 100%; width: 100%; }
+
+        /* Dettagli 40% */
+        #tappa-details {
+            height: 40%;
+            padding: 25px 35px;
+            overflow-y: auto;
+            background-color: var(--bg-travertino);
+            box-sizing: border-box;
+        }
+
+        .tappa-title { font-family: var(--font-titoli); font-size: 2rem; margin: 0 0 10px 0; color: var(--text-dark); }
+        
+        .tappa-meta { font-size: 0.95rem; color: var(--text-gray); margin-bottom: 15px; display: flex; gap: 15px; }
+        .tappa-meta span { background: #fff; padding: 4px 10px; border-radius: 4px; border: 1px solid #ddd; }
+        .tappa-meta i { color: var(--oro-bramante); margin-right: 5px; }
+
+        .tappa-desc { font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px; }
+
+        .multimedia-section { display: flex; gap: 20px; }
+        
+        .citazione-box {
+            flex: 1;
+            border-left: 4px solid var(--oro-bramante);
+            padding-left: 15px;
+            font-family: var(--font-titoli);
+            font-style: italic;
+            color: var(--text-dark);
+            background: rgba(255,255,255,0.6);
+            padding: 15px;
+            border-radius: 0 5px 5px 0;
+        }
+        .citazione-box strong { display: block; margin-top: 10px; font-family: var(--font-testi); font-size: 0.85rem; text-transform: uppercase; }
+
+        .music-player {
+            flex: 1;
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><i class="fa-solid fa-compass-drafting"></i> Passeggiate Romane</div>
+        <button class="btn-home" onclick="showHome()">Home</button>
+    </header>
+
+    <main id="view-home">
+        <h1 class="page-title">Itinerari Tematici</h1>
+        <p class="page-subtitle">Scopri Roma attraverso le menti che l'hanno plasmata</p>
+        <div id="cards-container"></div>
+    </main>
+
+    <main id="view-itinerary">
+        
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <h2 id="sidebar-title" class="sidebar-title">Titolo</h2>
+                <p id="sidebar-subtitle" class="sidebar-subtitle">Sottotitolo</p>
+            </div>
+            <div id="timeline-items"></div>
+        </aside>
+
+        <section id="main-content">
+            <div id="map-container">
+                <div id="map"></div>
+            </div>
+
+            <div id="tappa-details">
+                <h2 id="tappa-title" class="tappa-title">Seleziona una tappa</h2>
+                <div id="tappa-meta" class="tappa-meta"></div>
+                <p id="tappa-desc" class="tappa-desc"></p>
+                <div id="tappa-extra" class="multimedia-section"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        let itinerariData = null;
+        let currentItinIndex = 0;
+        let currentTappaIndex = 0;
+        let map = null;
+        let routeLine = null;
+        let markers = [];
+
+        // 1. Carica JSON all'avvio
+        window.onload = async function() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                itinerariData = data.itinerari;
+                renderHome();
+            } catch (error) {
+                document.getElementById('cards-container').innerHTML = "<p>Errore di caricamento data.json. Avvia tramite Live Server.</p>";
+            }
+        };
+
+        // 2. Renderizza Homepage
+        function renderHome() {
+            const container = document.getElementById('cards-container');
+            container.innerHTML = '';
+
+            itinerariData.forEach((itin, index) => {
+                container.innerHTML += `
+                    <div class="card">
+                        <div class="card-img" style="background-image: url('${itin.immagine_copertina}');">
+                            <div class="badge-categoria">${itin.categoria} - ${itin.tema.split('-')[0]}</div>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">${itin.nome}</h2>
+                            <p class="card-subtitle">${itin.sottotitolo}</p>
+                            <p class="card-desc">${itin.descrizione}</p>
+                            <div class="card-stats">
+                                <div class="stat"><i class="fa-regular fa-clock"></i><br><span class="stat-val">${itin.durata_totale_ore}h</span><br><span class="stat-label">Durata</span></div>
+                                <div class="stat"><i class="fa-solid fa-map-pin"></i><br><span class="stat-val">${itin.tappe.length}</span><br><span class="stat-label">Tappe</span></div>
+                                <div class="stat"><i class="fa-solid fa-person-walking"></i><br><span class="stat-val">${itin.distanza_totale_km}km</span><br><span class="stat-label">Distanza</span></div>
+                            </div>
+                            <button class="btn-start" onclick="startItinerario(${index})">Inizia Passeggiata</button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // 3. Torna alla Home
+        function showHome() {
+            document.getElementById('view-itinerary').style.display = 'none';
+            document.getElementById('view-home').style.display = 'block';
+        }
+
+        // 4. Avvia Itinerario
+        function startItinerario(index) {
+            currentItinIndex = index;
+            currentTappaIndex = 0;
+            const itin = itinerariData[index];
+
+            document.getElementById('view-home').style.display = 'none';
+            document.getElementById('view-itinerary').style.display = 'flex'; // Flex abilita il layout split-screen
+            
+            document.getElementById('sidebar-title').innerText = itin.nome;
+            document.getElementById('sidebar-subtitle').innerText = itin.sottotitolo;
+
+            initMap();
+            renderTimeline();
+            loadTappa(0);
+
+            // Fix ridimensionamento mappa di Leaflet
+            setTimeout(() => { map.invalidateSize(); map.fitBounds(routeLine.getBounds(), { padding: [50, 50] }); }, 200);
+        }
+
+        // 5. Inizializza Mappa
+        function initMap() {
+            if (map) map.remove();
+            map = L.map('map').setView([41.9028, 12.4964], 13);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                maxZoom: 19, attribution: '&copy; OpenStreetMap &copy; CARTO'
+            }).addTo(map);
+            drawRoute();
+        }
+
+        function drawRoute() {
+            const itin = itinerariData[currentItinIndex];
+            const coords = itin.tappe.map(t => t.coordinate);
+            
+            routeLine = L.polyline(coords, { color: '#DAA520', weight: 4, dashArray: '5, 8' }).addTo(map);
+
+            markers = [];
+            itin.tappe.forEach((tappa, index) => {
+                const marker = L.marker(tappa.coordinate).addTo(map);
+                marker.bindPopup(`<strong>${tappa.nome}</strong><br>${tappa.orario_consigliato}`);
+                marker.on('click', () => loadTappa(index));
+                markers.push(marker);
+            });
+        }
+
+        // 6. Renderizza Timeline (Sidebar)
+        function renderTimeline() {
+            const container = document.getElementById('timeline-items');
+            container.innerHTML = ''; 
+            const tappe = itinerariData[currentItinIndex].tappe;
+
+            tappe.forEach((tappa, index) => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+                if (index === currentTappaIndex) item.classList.add('current');
+
+                item.innerHTML = `
+                    <div class="timeline-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="timeline-text">
+                        <strong>${tappa.numero}. ${tappa.nome}</strong>
+                        <span>${tappa.orario_consigliato} - ${tappa.momento_giornata}</span>
+                    </div>
+                `;
+                item.onclick = () => loadTappa(index); 
+                container.appendChild(item);
+            });
+        }
+
+        // 7. Carica Dettagli Tappa (Area Destra Bottom)
+        function loadTappa(index) {
+            currentTappaIndex = index;
+            const tappa = itinerariData[currentItinIndex].tappe[index];
+
+            document.getElementById('tappa-title').innerText = `${tappa.numero}. ${tappa.nome}`;
+            
+            document.getElementById('tappa-meta').innerHTML = `
+                <span><i class="fa-regular fa-clock"></i> ${tappa.orario_consigliato}</span>
+                <span><i class="fa-solid fa-bullseye"></i> AI Target: ${tappa.esperienza_culturale.atmosfera.emozione_target}</span>
+            `;
+
+            document.getElementById('tappa-desc').innerText = tappa.descrizione_breve;
+
+            const extraContainer = document.getElementById('tappa-extra');
+            extraContainer.innerHTML = ''; 
+
+            if(tappa.esperienza_culturale.letteratura) {
+                extraContainer.innerHTML += `
+                    <div class="citazione-box">
+                        "${tappa.esperienza_culturale.letteratura.citazione}"
+                        <strong>— ${tappa.esperienza_culturale.letteratura.autore}</strong>
+                    </div>`;
+            }
+
+            if(tappa.esperienza_culturale.musica) {
+                extraContainer.innerHTML += `
+                    <div class="music-player">
+                        <strong style="color: var(--text-dark); display:block; margin-bottom: 5px;"><i class="fa-solid fa-music" style="color: var(--oro-bramante)"></i> Audio Guida</strong>
+                        <span style="font-size: 0.9rem; color: var(--text-gray);">${tappa.esperienza_culturale.musica.brano_completo}</span>
+                        <audio controls style="width: 100%; height: 30px; margin-top: 10px;">
+                            <source src="" type="audio/mpeg">
+                        </audio>
+                    </div>`;
+            }
+
+            renderTimeline();
+            map.flyTo(tappa.coordinate, 16, { animate: true, duration: 1 });
+            markers.forEach(m => m.closePopup());
+            markers[index].openPopup();
+        }
+    </script>
+</body>
+</html>
