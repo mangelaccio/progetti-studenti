@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roma al Tramonto dell'Anima — Gregorovius</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body,html{background:#080502;overflow-x:hidden}
+body{font-family:'IM Fell English',Georgia,serif;color:#f0e6cc;min-height:100vh}
+.cinzel{font-family:'Cinzel',serif}
+.cormorant{font-family:'Cormorant Garamond',serif}
+.screen{display:none;min-height:100vh;flex-direction:column}
+.screen.active{display:flex}
+.btn-gold{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.18em;padding:.75rem 2rem;background:transparent;border:1px solid #c8a84b;color:#c8a84b;cursor:pointer;transition:all .3s;text-transform:uppercase}
+.btn-gold:hover{background:#c8a84b;color:#080502}
+.btn-gold:disabled{opacity:.3;cursor:not-allowed}
+.btn-sm{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.12em;padding:.38rem .85rem;background:transparent;border:1px solid rgba(200,168,75,.4);color:#c8a84b;cursor:pointer;transition:all .25s;text-transform:uppercase}
+.btn-sm:hover{background:rgba(200,168,75,.12);border-color:#c8a84b}
+.stop-card{border:1px solid rgba(200,168,75,.18);border-left:3px solid transparent;padding:1rem;margin-bottom:.6rem;cursor:pointer;transition:all .28s;position:relative;background:rgba(8,5,2,.4)}
+.stop-card:hover{border-left-color:#c8a84b;background:rgba(200,168,75,.06)}
+.stop-card.done{opacity:.65}
+.check{display:none;position:absolute;right:.8rem;top:.8rem;color:#c8a84b;font-size:.75rem}
+.stop-card.done .check{display:block}
+.pill{display:inline-block;font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;padding:.22rem .65rem;border:1px solid rgba(200,168,75,.3);color:rgba(200,168,75,.8);background:rgba(200,168,75,.05);border-radius:2px;margin:.15rem}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.4),transparent);margin:1rem 0}
+.divider-sm{height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.3),transparent);margin:.6rem 0}
+@keyframes blink{50%{opacity:0}}
+.cursor{display:inline-block;width:2px;height:1em;background:#c8a84b;margin-left:2px;vertical-align:text-bottom;animation:blink .7s step-end infinite}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.fade{animation:fadeIn .5s ease forwards}
+.tag-time{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.1em;color:rgba(200,168,75,.7);background:rgba(200,168,75,.08);border:1px solid rgba(200,168,75,.2);padding:.18rem .55rem;display:inline-block}
+.quote-block{border-left:2px solid #c8a84b;padding:.9rem 1.2rem;background:rgba(200,168,75,.04);margin:1rem 0;font-style:italic;font-size:.95rem;line-height:1.9;color:rgba(240,230,204,.88)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.8rem 0}
+.info-item{background:rgba(200,168,75,.04);border:1px solid rgba(200,168,75,.12);padding:.6rem .8rem}
+.info-label{font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.12em;color:rgba(200,168,75,.65);text-transform:uppercase;margin-bottom:.25rem}
+.info-val{font-size:.88rem;color:rgba(240,230,204,.8)}
+.tab-btn{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.12em;padding:.7rem 1.2rem;background:none;cursor:pointer;text-transform:uppercase;color:rgba(200,168,75,.45);border:none;border-bottom:2px solid transparent;transition:all .25s}
+.tab-btn.active{color:#c8a84b;border-bottom-color:#c8a84b}
+.mood-btn{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.08em;padding:.38rem .85rem;border:1px solid rgba(200,168,75,.3);background:none;color:#8c7b6b;cursor:pointer;transition:all .25s}
+.mood-btn:hover,.mood-btn.active{border-color:#c8a84b;color:#c8a84b;background:rgba(200,168,75,.12)}
+.ch-opt{font-size:.88rem;padding:.55rem 1rem;border:1px solid rgba(200,168,75,.18);background:none;color:#f0e6cc;cursor:pointer;text-align:left;font-family:'IM Fell English',serif;transition:all .22s;width:100%;margin-bottom:.35rem}
+.ch-opt:hover:not(:disabled){border-color:#c8a84b;background:rgba(200,168,75,.08)}
+.ch-opt.ok{border-color:#4a8c3a!important;background:rgba(58,120,42,.18)!important;color:#92d478!important}
+.ch-opt.ko{border-color:#9b3a1a!important;background:rgba(155,58,26,.15)!important;color:#e07060!important}
+.timeline-wrap{display:flex;align-items:center;overflow-x:auto;padding:.3rem 0}
+.tl-item{display:flex;align-items:center;cursor:pointer}
+.tl-dot{width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(200,168,75,.35);background:rgba(8,5,2,.8);transition:all .3s;display:flex;align-items:center;justify-content:center;font-size:.45rem;color:#080502;flex-shrink:0}
+.tl-dot.done{background:#c8a84b;border-color:#c8a84b}
+.tl-dot.active{border-color:#c8a84b;box-shadow:0 0 0 3px rgba(200,168,75,.2)}
+.tl-line{width:32px;height:1px;background:rgba(200,168,75,.18);flex-shrink:0}
+.tl-line.done{background:rgba(200,168,75,.45)}
+.tl-label{font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.06em;color:rgba(200,168,75,.45);text-align:center;margin-top:.25rem;max-width:60px;line-height:1.3}
+.tl-label.active,.tl-label.done{color:rgba(200,168,75,.75)}
+.stops-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1rem}
+.map-iframe-wrap{width:100%;height:220px;border:1px solid rgba(200,168,75,.2);overflow:hidden;position:relative;margin-top:1rem}
+.map-iframe-wrap iframe{width:100%;height:100%;border:0;filter:invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85)}
+.open-maps{position:absolute;bottom:8px;right:8px;font-family:'Cinzel',serif;font-size:.52rem;letter-spacing:.1em;padding:.28rem .65rem;background:rgba(8,5,2,.88);border:1px solid rgba(200,168,75,.5);color:#c8a84b;text-decoration:none;text-transform:uppercase}
+.atm-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.8rem 0}
+.atm-item{background:rgba(200,168,75,.04);border:1px solid rgba(200,168,75,.1);padding:.6rem .8rem}
+.music-box{background:rgba(200,168,75,.04);border:1px solid rgba(200,168,75,.15);padding:.9rem 1rem;margin:.8rem 0}
+#loading{position:fixed;inset:0;background:#080502;display:flex;align-items:center;justify-content:center;z-index:999;flex-direction:column;gap:1rem}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:rgba(200,168,75,.3);border-radius:2px}
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <p class="cinzel" style="color:#c8a84b;font-size:.7rem;letter-spacing:.3em">CARICAMENTO IN CORSO...</p>
+  <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,#c8a84b,transparent)"></div>
+</div>
+
+<!-- ══ INTRO ══ -->
+<div class="screen" id="intro" style="align-items:center;justify-content:center;text-align:center;padding:2rem;min-height:100vh;
+  background:linear-gradient(to bottom, rgba(8,5,2,.85) 0%, rgba(8,5,2,.7) 50%, rgba(8,5,2,.92) 100%),
+  url('https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=1600&q=80') center/cover no-repeat fixed">
+  <p class="cinzel" style="font-size:.6rem;letter-spacing:.4em;color:#c8a84b;opacity:.75;text-transform:uppercase" id="intro-subtitle"></p>
+  <div class="divider-sm" style="width:60px;margin:.7rem auto"></div>
+  <h1 style="line-height:1.05;margin-bottom:.8rem">
+    <span class="cinzel" style="display:block;font-size:clamp(.8rem,1.8vw,1rem);letter-spacing:.3em;color:#c8a84b;margin-bottom:.4rem">FERDINAND</span>
+    <span class="cormorant" style="display:block;font-style:italic;font-weight:300;font-size:clamp(2.8rem,6vw,4.5rem);color:#f0e6cc;text-shadow:0 0 80px rgba(200,168,75,.3),0 2px 40px rgba(0,0,0,.9)" id="intro-nome"></span>
+    <span class="cormorant" style="display:block;font-style:italic;font-weight:300;font-size:clamp(1rem,2.5vw,1.6rem);color:rgba(200,168,75,.8);margin-top:.2rem" id="intro-titolo"></span>
+  </h1>
+  <div class="divider" style="width:280px;margin:1.2rem auto"></div>
+  <blockquote style="font-style:italic;font-size:clamp(.95rem,1.5vw,1.1rem);color:rgba(240,230,204,.82);max-width:500px;line-height:2.1;margin-bottom:.7rem" id="intro-citazione"></blockquote>
+  <p class="cinzel" style="font-size:.58rem;letter-spacing:.18em;color:rgba(200,168,75,.6);margin-bottom:2.5rem" id="intro-fonte"></p>
+  <div style="margin-bottom:2rem">
+    <span class="pill" id="pill-tappe"></span>
+    <span class="pill" id="pill-durata"></span>
+    <span class="pill">Narrazione AI</span>
+    <span class="pill">Mappe Reali</span>
+  </div>
+  <button class="btn-gold" onclick="showJourney()">✦ Inizia la Giornata ✦</button>
+  <p class="cinzel" style="font-size:.55rem;letter-spacing:.12em;color:rgba(200,168,75,.3);margin-top:2rem">ROMA · A.D. MDCCCLVI</p>
+</div>
+
+<!-- ══ JOURNEY ══ -->
+<div class="screen" id="journey">
+  <div style="padding:.9rem 1.5rem;border-bottom:1px solid rgba(200,168,75,.15);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;background:rgba(6,4,1,.97)">
+    <div>
+      <span class="cormorant" style="font-style:italic;font-size:1.2rem;color:#c8a84b" id="j-nome"></span>
+      <span class="cinzel" style="font-size:.55rem;letter-spacing:.15em;color:rgba(200,168,75,.5);margin-left:1rem">Roma · 1856</span>
+    </div>
+    <div class="timeline-wrap" id="timeline"></div>
+    <span class="cinzel" style="font-size:.68rem;color:#c8a84b">
+      <span id="jVisited">0</span>/<span id="jTotal">5</span> tappe · <strong id="jScore">0</strong> pt
+    </span>
+  </div>
+  <div style="flex:1;overflow-y:auto;padding:1.5rem;position:relative;
+    background:linear-gradient(rgba(8,5,2,.88),rgba(8,5,2,.82)),
+    url('https://images.unsplash.com/photo-1512767811219-ed2f11ce5d0d?w=1800&q=80') center/cover no-repeat fixed">
+    <p class="cinzel" style="font-size:.58rem;letter-spacing:.3em;color:#c8a84b;opacity:.6;margin-bottom:1.2rem;text-transform:uppercase">✦ Il tuo itinerario — Una giornata con Gregorovius</p>
+    <div class="stops-grid" id="stopsGrid"></div>
+  </div>
+</div>
+
+<!-- ══ DETAIL ══ -->
+<div class="screen fade" id="detail">
+  <div style="padding:.9rem 1.5rem;border-bottom:1px solid rgba(200,168,75,.15);display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;background:rgba(6,4,1,.97)">
+    <button class="btn-sm" onclick="showJourney()">← Itinerario</button>
+    <div>
+      <span class="tag-time" id="dTime"></span>
+      <span class="cormorant" id="dTitle" style="font-style:italic;font-size:1.5rem;color:#c8a84b;margin-left:.6rem"></span>
+    </div>
+    <span class="cinzel" style="margin-left:auto;font-size:.65rem;color:#c8a84b"><span id="dScore">0</span> pt</span>
+  </div>
+  <div style="display:flex;border-bottom:1px solid rgba(200,168,75,.15);background:rgba(6,4,1,.8)">
+    <button class="tab-btn active" id="tab-storia" onclick="switchTab('storia')">📖 Storia</button>
+    <button class="tab-btn" id="tab-atmosfera" onclick="switchTab('atmosfera')">🌿 Atmosfera</button>
+    <button class="tab-btn" id="tab-mappa" onclick="switchTab('mappa')">🗺 Mappa</button>
+    <button class="tab-btn" id="tab-pratico" onclick="switchTab('pratico')">🎟 Info Pratiche</button>
+  </div>
+  <div style="display:flex;flex:1;min-height:0;flex-wrap:wrap">
+    <div id="detailLeft" style="flex:1 1 300px;padding:1.8rem;overflow-y:auto;border-right:1px solid rgba(200,168,75,.1)"></div>
+    <div style="flex:1 1 280px;padding:1.8rem;display:flex;flex-direction:column;gap:1.3rem;overflow-y:auto">
+      <!-- AI Narrator -->
+      <div style="background:rgba(200,168,75,.04);border:1px solid rgba(200,168,75,.18);padding:1.3rem">
+        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem">
+          <div style="width:24px;height:24px;border:1px solid #c8a84b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:#c8a84b;flex-shrink:0">✦</div>
+          <div>
+            <div class="cinzel" style="font-size:.62rem;letter-spacing:.15em;color:#c8a84b">Voce di Gregorovius</div>
+            <div style="font-size:.58rem;color:rgba(140,123,107,.8);margin-top:.1rem">Narrazione AI · Scegli il tono</div>
+          </div>
+        </div>
+        <div id="moodBtns" style="display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.9rem"></div>
+        <div id="aiText" style="min-height:120px;font-size:.88rem;line-height:1.95;color:rgba(240,230,204,.85);font-style:italic;border-top:1px solid rgba(200,168,75,.1);padding-top:.8rem">
+          <span style="color:rgba(140,123,107,.7);font-style:normal;font-size:.8rem">Scegli un tono narrativo per sentire la voce di Gregorovius...</span>
+        </div>
+      </div>
+      <!-- Quiz -->
+      <div style="background:rgba(155,58,26,.03);border:1px solid rgba(200,168,75,.2);padding:1.2rem">
+        <p class="cinzel" style="font-size:.6rem;letter-spacing:.2em;color:#9b3a1a;margin-bottom:.7rem;text-transform:uppercase">⚔ Sfida dello Storico</p>
+        <p id="quizQ" style="font-size:.9rem;font-style:italic;line-height:1.75;margin-bottom:.9rem;color:rgba(240,230,204,.9)"></p>
+        <div id="quizOpts" style="display:flex;flex-direction:column;margin-bottom:.9rem"></div>
+        <p id="quizFeedback" style="font-size:.82rem;font-style:italic;margin-bottom:.8rem;line-height:1.7;display:none"></p>
+        <button class="btn-gold" id="btnDone" onclick="markDone()" disabled style="font-size:.65rem;padding:.65rem 1.5rem">Tappa Completata →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FINALE ══ -->
+<div class="screen" id="finale" style="align-items:center;justify-content:center;text-align:center;padding:2rem;background:radial-gradient(ellipse at 50% 30%,rgba(200,168,75,.14) 0%,transparent 60%),#080502">
+  <div style="border:1px solid rgba(200,168,75,.38);padding:2.5rem;max-width:540px;background:rgba(200,168,75,.03);position:relative">
+    <div style="position:absolute;top:10px;left:10px;width:18px;height:18px;border-top:1px solid #c8a84b;border-left:1px solid #c8a84b"></div>
+    <div style="position:absolute;bottom:10px;right:10px;width:18px;height:18px;border-bottom:1px solid #c8a84b;border-right:1px solid #c8a84b"></div>
+    <p class="cinzel" style="font-size:.58rem;letter-spacing:.35em;color:#c8a84b;opacity:.75;text-transform:uppercase">La Città di Roma</p>
+    <div class="divider-sm" style="width:60px;margin:.6rem auto"></div>
+    <h2 class="cormorant" style="font-style:italic;font-weight:300;font-size:2.3rem;color:#c8a84b;margin:.6rem 0">Cittadino Onorario</h2>
+    <p style="font-size:.9rem;line-height:1.82;color:rgba(240,230,204,.72);margin:.8rem 0" id="finale-desc"></p>
+    <div class="divider" style="width:160px;margin:.9rem auto"></div>
+    <div class="cinzel" id="finalScore" style="font-size:2.8rem;color:#c8a84b;margin:.8rem 0;text-shadow:0 0 30px rgba(200,168,75,.3)">0</div>
+    <p class="cinzel" style="font-size:.58rem;letter-spacing:.25em;color:rgba(140,123,107,.8);text-transform:uppercase">punti conquistati</p>
+    <div class="divider" style="width:160px;margin:.9rem auto"></div>
+    <blockquote style="font-style:italic;font-size:.88rem;color:rgba(140,123,107,.8);line-height:1.92;margin:1rem 0" id="finale-citazione"></blockquote>
+    <button class="btn-gold" onclick="restartGame()" style="margin-top:1.5rem">✦ Nuova Giornata ✦</button>
+  </div>
+</div>
+
+<script>
+// ══ STATE ══════════════════════════════════════════════════════════════════
+// ══ STATE ══════════════════════════════════════════════════════════════════
+let currentAudio = null; // Serve per gestire l'audio locale
+let DATA = null;
+let STOPS = [];
+const state = {
+  visited: new Set(), score: 0, cur: null,
+  mood: null, answered: false, chosen: null, qi: 0, tab: 'storia'
+};
+// ══ QUIZ DATA (non nel JSON — logica di gioco) ══════════════════════════════
+const QUIZ = {
+  tappa_01_pincio: [
+    {q:"Secondo i 'Diari romani' di Gregorovius, quale caratteristica assume Roma durante le ore mattutine trascorse sulla terrazza del Pincio?", o:["Una presenza viva","Un reperto archeologico","Una città caotica","Un panorama immobile"], c:0},
+    {q:"Chi trasformò il Pincio in giardino pubblico in epoca napoleonica?", o:["Napoleone Bonaparte","Giuseppe Valadier","Camillo Borghese","Luigi Canina"], c:1}
+  ],
+  tappa_02_foro_romano: [
+    {q:"Quale aspetto del Foro Romano affascinava maggiormente lo storico Ferdinand Gregorovius?", o:["Il valore commerciale dei fori","Gli strati medievali nascosti","La magnificenza della Roma imperiale","Il restauro delle colonne romane"], c:1},
+    {q:"Nel brano citato, come definisce Gregorovius i 'pomposi fori' della Roma imperiale?", o:["Monumenti eterni e indistruttibili","Dei semplici fori","Centri attivi della vita religiosa","Cadenti di vecchiezza e argomento di leggenda"], c:3}
+  ],
+  tappa_03_campidoglio: [
+    {q:"Chi progettò la piazza del Campidoglio nel XVI secolo?", o:["Bernini","Borromini","Michelangelo","Bramante"], c:2},
+    {q:"Quale riconoscimento ricevette Gregorovius sul Campidoglio nel 1876?", o:["Senatore romano","La direzione dei Musei Capitolini","Professore universitario","Cittadino onorario"], c:3}
+  ],
+  tappa_04_ghetto_ebraico: [
+    {q:"In quale anno Gregorovius scrisse il saggio Il Ghetto e gli Ebrei di Roma?", o:["1850","1853","1858","1862"], c:1},
+    {q:"Quale struttura romana del I secolo a.C. è il cuore del Ghetto ebraico?", o:["Arco di Tito","Teatro di Marcello","Portico d'Ottavia","Tempio di Giano"], c:2}
+  ],
+  tappa_05_gianicolo: [
+    {q:"A che ora spara il cannone del Gianicolo ogni giorno?", o:["10:00","11:00","12:00","13:00"], c:2},
+    {q:"Quale poeta morì nel convento di Sant'Onofrio sul Gianicolo nel 1595?", o:["Dante Alighieri","Francesco Petrarca","Torquato Tasso","Ludovico Ariosto"], c:2}
+  ]
+};
+
+// ══ NARRAZIONI AI (generate dal prompt template del JSON) ══════════════════
+const NARRAZIONI = {
+  tappa_01_pincio: {
+    poetico: "L'alba sul Pincio è la prima pagina di un libro che Roma riscrive ogni giorno. Mi sono fermato sul bordo della terrazza con il cappotto abbottonato contro il fresco di ottobre, e ho guardato la cupola di San Pietro prendere colore — da grigia a rosa a oro. Non esiste panorama che parli più direttamente all'anima.",
+    storico: "Il Pincio fu trasformato in giardino pubblico da Giuseppe Valadier tra il 1809 e il 1814. Prima era proprietà delle grandi famiglie patrizie — i Pinci, da cui il nome. Ogni pietra nasconde un millennio. Vengo qui ogni mattina per ricordarmi che Roma non è una città: è un palinsesto.",
+    nostalgico: "Quante mattine ho trascorso qui in vent'anni! La prima volta ero un giovane prussiano squattrinato che guardava Roma come si guarda qualcosa di impossibile da possedere. Oggi mi rendo conto che ho consumato i miei anni migliori ad amarla — e che non cambierei nulla.",
+    avventuroso: "Sono arrivato al Pincio prima dell'alba, nella nebbia, scivolando lungo i sentieri bui del parco. I gatti selvatici mi fissavano come sentinelle antiche. Quando il sole ha bucato le nuvole e Roma è apparsa ai miei piedi, ho capito perché tutti i grandi esploratori finivano inevitabilmente qui."
+  },
+  tappa_02_foro_romano: {
+    poetico: "Le colonne del Tempio di Saturno si stagliano contro il cielo azzurro come dita di un gigante sepolto — magnifiche nella loro incompletezza. Qui il tempo non è passato: si è accumulato, stratificato come le pagine di un libro che nessuno potrà mai finire di leggere.",
+    storico: "Il Foro Romano fu il centro politico, religioso e commerciale dell'Impero per quasi mille anni. Ho dedicato intere settimane a studiare i suoi strati medievali — le basiliche paleocristiane sulle fondamenta dei templi pagani. Roma non demolisce, trasforma.",
+    nostalgico: "La prima volta che entrai nel Foro ero così emozionato che mi fermai sulla soglia, incapace di muovermi. Oggi lo attraverso con la confidenza di chi conosce ogni pietra — eppure in certi angoli quella commozione originale si riaccende.",
+    avventuroso: "Ho scoperto un passaggio semisegreto dalla Basilica di Massenzio che porta direttamente al Palatino. Da lassù si domina l'intero Foro con la prospettiva dell'imperatore che guarda il suo popolo. Roma regala sempre qualcosa a chi la cerca con coraggio."
+  },
+  tappa_03_campidoglio: {
+    poetico: "Dal Campidoglio Roma si rivela nella sua interezza — le cupole, i tetti, il serpente del Tevere. Come Gibbon prima di me, è qui che ho capito la mia missione: restituire alla memoria il Medioevo romano che tutti avevano dimenticato.",
+    storico: "Il Campidoglio fu il centro del potere civico di Roma per millenni. La piazza attuale fu progettata da Michelangelo per papa Paolo III nel XVI secolo. I Musei Capitolini, fondati nel 1471, sono i più antichi musei pubblici del mondo.",
+    nostalgico: "Mi siedo sui gradini della piazza e guardo Roma stendersi ai miei piedi. Penso agli anni di lavoro negli archivi, alle pagine scritte e riscritte. Il Campidoglio è il luogo dove tutto ha avuto senso per la prima volta.",
+    avventuroso: "Ho percorso la Cordonata di Michelangelo di corsa stamattina, di buon'ora, prima che arrivassero i visitatori. In cima, nella luce dell'alba, la statua di Marco Aurelio sembrava animarsi. Roma è sempre pronta a sorprendere chi la incontra senza aspettative."
+  },
+  tappa_04_ghetto_ebraico: {
+    poetico: "I vicoli del Ghetto hanno una luce speciale nel pomeriggio — dorata, ferma, come se il tempo si fosse addensato tra questi muri. La comunità che vi abita da duemila anni ha qualcosa di eterno, come Roma stessa.",
+    storico: "Il Ghetto ebraico di Roma è abitato ininterrottamente da oltre duemila anni — dalla Repubblica romana fino ad oggi. Il Portico d'Ottavia, del I secolo a.C., è il cuore antico del quartiere. Nel mio saggio del 1853 ho cercato di restituire dignità a questa storia spesso ignorata.",
+    nostalgico: "Quando percorro questi vicoli penso a quanto poco sia cambiato in duemila anni. Le stesse famiglie, le stesse strade strette, la stessa luce pomeridiana. Roma ha tanti volti — questo è il più antico di tutti.",
+    avventuroso: "Ho scoperto iscrizioni latine murate in un vicolo laterale che nessuna guida segnala. Il quartiere è un labirinto di storia stratificata — ogni portone nasconde secoli. Sono entrato in una bottega e ho parlato con un anziano che conosceva a memoria la storia di ogni pietra."
+  },
+  tappa_05_gianicolo: {
+    poetico: "Roma al tramonto vista dal Gianicolo è la cosa più bella che esista. Il cielo diventa una tavolozza: arancio, rosa, viola. Le cupole si scuriscono contro il cielo illuminato e Roma diventa una silhouette sacra che non dimenticherò mai.",
+    storico: "Il Gianicolo non rientra tra i sette colli tradizionali ma è da sempre il belvedere per eccellenza della città. Sul colle sorge Sant'Onofrio, dove morì Torquato Tasso nel 1595. Nel 1857 pubblicai un saggio sulla festa annuale del 25 aprile in suo onore, quando i romani di ogni ceto salivano qui insieme.",
+    nostalgico: "La mia ultima sera a Roma, prima di partire per Monaco, l'ho passata qui. Guardavo le cupole nell'oro del tramonto e pensavo ai vent'anni in questa città — ogni pagina scritta, ogni mattina al Pincio. Non piangevo. Ero troppo pieno di gratitudine.",
+    avventuroso: "Ho percorso il sentiero che sale al Gianicolo attraverso i giardini di una villa, il cancello sempre socchiuso nel pomeriggio. In cima, invece del belvedere affollato, una piccola terrazza dimenticata con la vista più bella di Roma. I segreti migliori appartengono a chi li cerca."
+  }
+};
+
+
+// ══ LOAD JSON ══════════════════════════════════════════════════════════════
+async function loadData() {
+  try {
+    const res = await fetch('data.json');
+    if (!res.ok) throw new Error('data.json non trovato');
+    DATA = await res.json();
+    STOPS = DATA.tappe;
+    initApp();
+  } catch(e) {
+    document.getElementById('loading').innerHTML =
+      '<p class="cinzel" style="color:#e07060;font-size:.7rem;letter-spacing:.2em;text-align:center;padding:2rem">⚠ Errore nel caricamento di data.json<br><br><span style="font-size:.6rem;opacity:.7">Assicurati che data.json sia nella stessa cartella di questo file HTML</span></p>';
+  }
+}
+
+// ══ INIT ═══════════════════════════════════════════════════════════════════
+function initApp() {
+  const it = DATA.itinerario;
+  const p = it.personaggio;
+
+  // Intro
+  document.getElementById('intro-subtitle').textContent = it.nome + ' — Una giornata nell\'Ottocento';
+  document.getElementById('intro-nome').textContent = p.nome.split(' ')[1];
+  document.getElementById('intro-titolo').textContent = 'Pellegrino di Roma · ' + it.tema;
+  document.getElementById('intro-citazione').textContent = '"Roma è il demone contro cui lotto. Se vinco la battaglia, sarò anch\'io un trionfatore."';
+  document.getElementById('intro-fonte').textContent = '— Diari romani, 30 aprile 1856';
+
+  document.getElementById('pill-tappe').textContent = STOPS.length + ' Tappe';
+  document.getElementById('pill-durata').textContent = it.durata_totale_ore + ' ore · ' + it.distanza_totale_km + ' km';
+
+  // Journey header
+  document.getElementById('j-nome').textContent = p.nome.split(' ')[1];
+  document.getElementById('jTotal').textContent = STOPS.length;
+
+  // Finale
+  document.getElementById('finale-desc').textContent =
+    'Hai percorso Roma dall\'alba al tramonto come ' + p.nome +
+    ', con gli occhi di uno storico innamorato e l\'anima di un pellegrino.';
+  document.getElementById('finale-citazione').innerHTML =
+    '"' + STOPS[STOPS.length-1].esperienza.letteratura.citazione + '"' +
+    '<div class="cinzel" style="font-style:normal;font-size:.55rem;letter-spacing:.12em;color:rgba(139,105,20,.7);margin-top:.5rem">— ' +
+    STOPS[STOPS.length-1].esperienza.letteratura.opera.toUpperCase() + ', ' +
+    STOPS[STOPS.length-1].esperienza.letteratura.anno + '</div>';
+
+  // Hide loading
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('intro').classList.add('active');
+}
+
+// ══ NAVIGATION ═════════════════════════════════════════════════════════════
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function showJourney() {
+  renderTimeline();
+  renderStops();
+  document.getElementById('jScore').textContent = state.score;
+  document.getElementById('jVisited').textContent = state.visited.size;
+  showScreen('journey');
+}
+
+// ══ TIMELINE ═══════════════════════════════════════════════════════════════
+function renderTimeline() {
+  const tl = document.getElementById('timeline');
+  tl.innerHTML = STOPS.map((s,i) => {
+    const done = state.visited.has(s.id);
+    const active = state.cur === s.id;
+    const lineClass = i>0 && state.visited.has(STOPS[i-1].id) ? 'tl-line done' : 'tl-line';
+    const dotClass = done ? 'tl-dot done' : active ? 'tl-dot active' : 'tl-dot';
+    const lblClass = done||active ? 'tl-label done' : 'tl-label';
+    return `
+      <div class="tl-item" onclick="openStop('${s.id}')">
+        ${i>0 ? `<div class="${lineClass}"></div>` : ''}
+        <div style="display:flex;flex-direction:column;align-items:center">
+          <div class="${dotClass}">${done?'✓':''}</div>
+          <div class="${lblClass}">${s.orario_consigliato}</div>
+          <div class="${lblClass}" style="font-size:.42rem">${s.nome.split(' ').slice(0,2).join(' ')}</div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ══ STOPS GRID ═════════════════════════════════════════════════════════════
+function renderStops() {
+  const grid = document.getElementById('stopsGrid');
+  grid.innerHTML = STOPS.map(s => {
+    const poi = DATA.pois.find(p => p.id === s.poi_id);
+    const done = state.visited.has(s.id);
+    return `
+      <div class="stop-card${done?' done':''}" onclick="openStop('${s.id}')">
+        <span class="check">✓</span>
+        <div style="display:flex;align-items:baseline;gap:.8rem;margin-bottom:.5rem">
+          <span class="tag-time">${s.orario_consigliato}</span>
+          <span class="cormorant" style="font-style:italic;font-size:.88rem;color:#c8a84b">${s.nome}</span>
+        </div>
+        <div class="cinzel" style="font-size:.62rem;color:rgba(240,230,204,.9);margin-bottom:.35rem">${s.momento_giornata.toUpperCase()}</div>
+        <p style="font-size:.82rem;line-height:1.7;color:rgba(240,230,204,.55);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">${s.descrizione_breve}</p>
+        <div style="margin-top:.7rem">
+          <span class="pill">${poi ? poi.metadata.biglietto : ''}</span>
+          <span class="pill">${s.durata_visita_min} min</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// ══ OPEN STOP ══════════════════════════════════════════════════════════════
+function openStop(id) {
+  state.cur = id;
+  state.mood = null;
+  state.answered = false;
+  state.chosen = null;
+  state.qi = Math.floor(Math.random() * QUIZ[id].length);
+  state.tab = 'storia';
+
+  const s = STOPS.find(t => t.id === id);
+  document.getElementById('detail').style.background = `linear-gradient(rgba(8,5,2,.88), rgba(8,5,2,.82)), url('${s.immagine_url}') center/cover no-repeat fixed`;
+  document.getElementById('dTime').textContent = s.orario_consigliato;
+  document.getElementById('dTitle').textContent = s.nome;
+  document.getElementById('dScore').textContent = state.score;
+  document.getElementById('aiText').innerHTML =
+    '<span style="color:rgba(140,123,107,.7);font-style:normal;font-size:.8rem">Scegli un tono narrativo per sentire la voce di Gregorovius...</span>';
+  document.getElementById('btnDone').disabled = true;
+  document.getElementById('quizFeedback').style.display = 'none';
+
+  // Render mood buttons from ai_layer
+  const toni = DATA.itinerario.ai_layer.toni_disponibili;
+  const labels = {poetico:'🌿 Poetico', storico:'📜 Storico', nostalgico:'🕯 Nostalgico', avventuroso:'⚔️ Avventuroso'};
+  document.getElementById('moodBtns').innerHTML = toni.map(t =>
+    `<button class="mood-btn" id="mb-${t}" onclick="pickMood('${t}')">${labels[t]}</button>`
+  ).join('');
+
+  renderTabContent();
+  renderQuiz();
+  showScreen('detail');
+}
+
+// ══ TABS ═══════════════════════════════════════════════════════════════════
+function switchTab(tab) {
+  state.tab = tab;
+  ['storia','atmosfera','mappa','pratico'].forEach(t => {
+    document.getElementById('tab-'+t).classList.toggle('active', t===tab);
+  });
+  renderTabContent();
+}
+
+function renderTabContent() {
+  const s = STOPS.find(t => t.id === state.cur);
+  const poi = DATA.pois.find(p => p.id === s.poi_id);
+  const esp = s.esperienza;
+  const left = document.getElementById('detailLeft');
+
+  if (state.tab === 'storia') {
+    left.innerHTML = `
+      <p class="cinzel" style="font-size:.55rem;letter-spacing:.3em;color:#c8a84b;opacity:.65;margin-bottom:.7rem;text-transform:uppercase">Il Luogo</p>
+      <p style="font-size:.92rem;line-height:1.88;color:rgba(240,230,204,.75);margin-bottom:1rem">${s.descrizione_storica}</p>
+      <div class="quote-block">
+        ${esp.letteratura.citazione}
+        <div style="margin-top:.6rem;font-size:.7rem;font-style:normal;font-family:'Cinzel',serif;letter-spacing:.1em;color:rgba(200,168,75,.55)">
+          — ${esp.letteratura.autore} · <em>${esp.letteratura.opera}</em>, ${esp.letteratura.anno}
+        </div>
+      </div>
+      ${poi ? `<p class="cinzel" style="font-size:.55rem;letter-spacing:.3em;color:#c8a84b;opacity:.65;margin-top:1.2rem;margin-bottom:.6rem;text-transform:uppercase">Curiosità</p>
+      <p style="font-size:.88rem;line-height:1.85;color:rgba(240,230,204,.65);font-style:italic">${poi.curiosita}</p>` : ''}`;
+  }
+  else if (state.tab === 'atmosfera') {
+    const atm = esp.atmosfera;
+    const mus = esp.musica;
+    left.innerHTML = `
+      <p class="cinzel" style="font-size:.55rem;letter-spacing:.3em;color:#c8a84b;opacity:.65;margin-bottom:.8rem;text-transform:uppercase">Atmosfera del Momento</p>
+      <div class="atm-grid">
+        ${[['☀ Luce',atm.luce],['🌡 Temperatura',atm.temperatura],['👥 Affollamento',atm.affollamento],['💫 Emozione',atm.emozione_target]].map(([l,v])=>`
+        <div class="atm-item"><div class="info-label">${l}</div><div class="info-val">${v}</div></div>`).join('')}
+      </div>
+      <div class="divider"></div>
+      <p class="cinzel" style="font-size:.55rem;letter-spacing:.3em;color:#c8a84b;opacity:.65;margin-bottom:.8rem;text-transform:uppercase">🎵 Colonna Sonora</p>
+      <div class="music-box">
+        <div style="font-size:.88rem;color:rgba(240,230,204,.9);margin-bottom:.3rem">${mus.brano}</div>
+        <div class="cinzel" style="font-size:.6rem;color:rgba(200,168,75,.65);margin-bottom:.7rem">${mus.compositore}</div>
+        <a href="${mus.spotify_url}" target="_blank" style="font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:.1em;color:#c8a84b;text-decoration:none;border:1px solid rgba(200,168,75,.4);padding:.3rem .8rem">▶ Ascolta su Spotify</a>
+      </div>`;
+  }
+  else if (state.tab === 'mappa') {
+    left.innerHTML = `
+      <p class="cinzel" style="font-size:.55rem;letter-spacing:.3em;color:#c8a84b;opacity:.65;margin-bottom:.7rem;text-transform:uppercase">Posizione</p>
+      <p class="cinzel" style="font-size:.78rem;color:rgba(240,230,204,.8);margin-bottom:.5rem">${s.nome}</p>
+      <div class="map-iframe-wrap">
+        <iframe src="https://maps.google.com/maps?q=${s.coordinate[0]},${s.coordinate[1]}&z=16&output=embed" allowfullscreen loading="lazy" title="${s.nome}"></iframe>
+        <a href="https://maps.google.com/?q=${s.coordinate[0]},${s.coordinate[1]}" target="_blank" class="open-maps">↗ Apri in Maps</a>
+      </div>
+      ${poi ? `<div style="margin-top:1rem">
+        <p class="cinzel" style="font-size:.52rem;letter-spacing:.2em;color:rgba(200,168,75,.55);margin-bottom:.5rem;text-transform:uppercase">Come Arrivare</p>
+        <p style="font-size:.85rem;line-height:1.8;color:rgba(240,230,204,.7)">${poi.metadata.come_arrivare}</p>
+      </div>` : ''}`;
+  }
+  else if (state.tab === 'pratico') {
+    left.innerHTML = `
+      <p class="cinzel" style="font-size:.55rem;letter-spacing:.3em;color:#c8a84b;opacity:.65;margin-bottom:.8rem;text-transform:uppercase">Informazioni Pratiche</p>
+      ${poi ? `<div class="info-grid">
+        ${[['Ingresso',poi.metadata.biglietto],['Orari',poi.metadata.orari_apertura],['Durata',s.durata_visita_min+' minuti'],['Accessibilità',poi.metadata.accessibilita]].map(([l,v])=>`
+        <div class="info-item"><div class="info-label">${l}</div><div class="info-val">${v}</div></div>`).join('')}
+      </div>
+      <div class="divider"></div>
+      <p class="cinzel" style="font-size:.52rem;letter-spacing:.2em;color:rgba(200,168,75,.55);margin-bottom:.6rem;text-transform:uppercase">📍 Note Storiche</p>
+      <p style="font-size:.88rem;line-height:1.85;color:rgba(240,230,204,.72);font-style:italic;background:rgba(200,168,75,.04);border:1px solid rgba(200,168,75,.1);padding:1rem">${poi.storia}</p>` : ''}`;
+  }
+}
+
+// ══ MOOD / AI NARRATOR ═════════════════════════════════════════════════════
+let typeInterval = null;
+   function pickMood(mood) {
+    state.mood = mood;
+    document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('mb-'+mood).classList.add('active');
+
+    // --- CARICAMENTO AUDIO LOCALE ---
+    // Ferma l'audio precedente se attivo
+    if (currentAudio) { currentAudio.pause(); }
+    
+    // Costruisce il percorso locale (es: audio/tappa_01_pincio_poetico.mp3)
+    const audioPath = `audio/${state.cur}_${mood}.mp3`;
+    
+    currentAudio = new Audio(audioPath);
+    currentAudio.play().catch(e => console.log("Errore riproduzione audio locale: " + audioPath));
+    
+    // --- ANIMAZIONE TESTO (Macchina da scrivere) ---
+    clearInterval(typeInterval);
+    const el = document.getElementById('aiText');
+    const text = NARRAZIONI[state.cur][mood];
+    el.innerHTML = '<span class="cursor"></span>';
+    let i = 0;
+    typeInterval = setInterval(() => {
+        i++;
+        el.innerHTML = text.slice(0,i) + '<span class="cursor"></span>';
+        if (i >= text.length) { clearInterval(typeInterval); el.innerHTML = text; }
+    }, 18);
+}
+// ══ QUIZ ═══════════════════════════════════════════════════════════════════
+function renderQuiz() {
+  const q = QUIZ[state.cur][state.qi];
+  document.getElementById('quizQ').textContent = q.q;
+  document.getElementById('quizOpts').innerHTML = q.o.map((opt,i) =>
+    `<button class="ch-opt" onclick="answerQuiz(${i})">${opt}</button>`
+  ).join('');
+}
+
+function answerQuiz(i) {
+  if (state.answered) return;
+  state.answered = true;
+  state.chosen = i;
+  const q = QUIZ[state.cur][state.qi];
+  document.querySelectorAll('.ch-opt').forEach((b,idx) => {
+    b.disabled = true;
+    if (idx === q.c) b.classList.add('ok');
+    else if (idx === i) b.classList.add('ko');
+  });
+  const fb = document.getElementById('quizFeedback');
+  if (i === q.c) {
+    state.score += 150;
+    document.getElementById('dScore').textContent = state.score;
+    fb.textContent = '✓ Esatto! +150 punti';
+    fb.style.color = 'rgba(144,196,120,.85)';
+  } else {
+    fb.textContent = '✗ Non esatto — ma hai imparato qualcosa di nuovo.';
+    fb.style.color = 'rgba(224,112,96,.85)';
+  }
+  fb.style.display = 'block';
+  document.getElementById('btnDone').disabled = false;
+}
+
+function markDone() {
+  state.visited.add(state.cur);
+  if (state.visited.size >= STOPS.length) {
+    document.getElementById('finalScore').textContent = state.score;
+    showScreen('finale');
+  } else {
+    showJourney();
+  }
+}
+
+function restartGame() {
+  state.visited = new Set();
+  state.score = 0;
+  state.cur = null;
+  state.mood = null;
+  state.answered = false;
+  state.chosen = null;
+  showScreen('intro');
+}
+
+// ══ START ══════════════════════════════════════════════════════════════════
+loadData();
+</script>
+</body>
+</html>
