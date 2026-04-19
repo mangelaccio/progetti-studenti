@@ -1,0 +1,395 @@
+{
+  "itinerari": [
+    {
+      "id": "Alaindelon_attore",
+      "nome": "La Roma di Alain Delon: tra monumenti e scenari",
+      "sottotitolo": "Tra cinema e realtà nella Hollywood sul Tevere",
+      "personaggio": {
+        "nome": "Alain Delon",
+        "anni": "1935-2024",
+        "professione": "Attore",
+        "nazionalita": "Francese",
+        "biografia_breve": "Alain Delon è stato un celebre attore e icona del cinema mondiale, nato in Francia nel 1935 e scomparso nel 2024. Amava definirsi 'francese di nascita e italiano di cuore', perché proprio in Italia è iniziata la sua straordinaria carriera. È diventato famoso soprattutto per il fascino e l’eleganza sullo schermo tra gli anni '60 e '80, interpretando personaggi di grande impatto. Ha lavorato con importanti registi come: René Clément, che lo ha diretto in Delitto in pieno sole (1960) e Che gioia vivere (1961) e Michelangelo Antonioni, con cui ha collaborato nel film L'eclisse (1962). La sua versatilità gli ha permesso di passare dal noir al dramma d'autore con grande maestria. Delon ha lasciato un'impronta indelebile nel cinema internazionale, contribuendo a rendere la Città Eterna un set cinematografico vivace e monumentale.",
+        "immagine": "https://i.ibb.co/QZqKjLR/IMG-7222.jpg[/img][/url]",
+        "opere_correlate": [
+          "Delitto in pieno sole (1960)",
+          "Che gioia vivere (1961)",
+          "L'eclisse (1962)"
+        ]
+      },
+      "tema": "Roma anni '60 - Fascino del cinema",
+      "categoria": "Cinema e Cultura",
+      "durata_totale_ore": 9,
+      "difficolta": "facile",
+      "immagine_copertina": "https://i.ibb.co/ksxf5c8t/alain-delon.jpg[/img][/url]",
+      "distanza_totale_km": 6.3,
+      "periodo_consigliato": "Primavera/Estate (temperature miti)",
+      "stagione_migliore": ["marzo", "aprile","maggio"," giugno", "luglio"],
+      "descrizione": "Ripercorri le orme di Alain Delon attraverso i luoghi più iconici di Roma. Ogni tappa richiama una scena o un momento significativo dei film girati nella Capitale durante l'epoca d'oro della 'Hollywood sul Tevere' ",
+      "note_logistiche": "Partenza alle 9:00 dalla prima tappa: portare acqua, protezione solare e calzature adeguate. È consigliabile inserire una breve pausa per un caffè lungo il percorso e prevedere un pasto, tenendo conto degli orari di accesso delle Terme di Caracalla (ultimo ingresso entro le 18:15) e, per chi desidera visitarlo, anche di Castel Sant’Angelo.",
+      "accessibilita": "Tutte le tappe della passeggiata sono facilmente accessibili. Piazza del Popolo è raggiungibile con la metro A, mentre le tappe successive, come Castel Sant’Angelo, il Tempio di Adriano e l'Isola Tiberina si trovano nel centro storico e sono percorribili a piedi. Le Terme di Caracalla invece sono raggiungibili anche con l'autobus dal centro.",
+      "costo_stimato": "Gratuito (ad eccezzione delle Terme di Caracalla e Castel Sant'Angelo che prevedono un biglietto d'ingresso variabile in base all'età)",
+      "tappe": [
+        {
+          "numero": 1,
+          "poi_id": "piazza_del_popolo",
+          "orario_consigliato": "9:00",
+          "momento_giornata": "prima mattinata",
+          "durata_visita_min": 40,
+          "coordinate": [41.9109, 12.4768],
+          "nome": "Piazza del popolo",
+          "descrizione_breve": "Piazza del Popolo è uno degli spazi urbani più celebri di Roma, situato all’ingresso del centro storico. Ampia e scenografica, rappresenta un importante punto di incontro tra storia, arte e vita cittadina.",
+          "indicazioni_arrivo": "Raggiungibile con la metro A (fermata Flaminio), tram linea 2 e diverse linee di autobus; facilmente accessibile anche a piedi dal centro storico.",
+          "esperienza_culturale": {
+            "cinema": {
+              "film_completo": "Delitto in pieno sole",
+              "attore": "Alain Delon",
+              "personaggio": "Tom Ripley",
+              "scena": "Incontro tra Tom e Philippe a Piazza del Popolo",
+              "anno": 1960,
+              "descrizione_scena ": "Alain Delon, nei panni di Tom Ripley, si trova con Philippe, un giovane americano ricco in un bar vicino a Piazza del Popolo. I due, dopo aver comprato un bastone da un cieco, lo usano per fingersi non vedenti e conquistare una donna, mostrando la vita agiata di Philippe e un rapporto che sarà poi segnato dall’invidia di Ripley.",
+              "youtube_url": "https://youtu.be/stWfOrdPhcA?t=340",
+              "note_visione": "Prestare attenzione alla vivacità di Piazza del Popolo e alla vita nei bar, che contribuiscono a creare l’atmosfera della scena"
+            },
+            "letteratura": {
+              "citazione": "Entrammo nella Citta Eterna ... passando per Porta del Popolo ... ai margini del Carnevale",
+              "autore": "Charles Dickens",
+              "opera": "Pictures from Italy",
+              "anno": 1846,
+              "contesto": "Dickens descrive il suo ingresso a Roma da Porta del Popolo: la piazza si apre come un palcoscenico, animata dal passo dei passanti e dai colori della città."
+            },
+            "atmosfera": {
+              "momento": "prima mattinata",
+              "luce": "dorata e luminosa, con ombre nette",
+              "suoni_ambiente": [
+                "eco dei suoni nella piazza",
+                "scroscio leggero d'acqua delle fontane",
+                "musica di strada"
+              ],
+              "temperatura_stimata": "16-20°C",
+              "affollamento": "medio, con aumento progressivo durante la giornata",
+              "consiglio_fotografico": "Per fotografare Piazza del Popolo a Roma al meglio, puoi scegliere l’entrata dalla Porta del Popolo per catturare subito l’obelisco e le chiese gemelle in prospettiva ampia, oppure salire sulla terrazza del Pincio per una vista panoramica che abbraccia tutta la piazza e le strade circostanti, perfetta al tramonto per la luce e i dettagli architettonici.",
+              "emozione_target": "Eleganza, freschezza e risveglio della città"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Neoclassico e Rinascimentale",
+              "architetti": ["Giuseppe Valadier"],
+              "descrizione": "Piazza monumentale con obelisco centrale, fontane e chiese gemelle, simbolo dell’ingresso scenografico alla città.",
+              "anno_costruzione": "1562(Porta) - 1824 (Sistemazione finale)",
+              "committente": "Sisto V, Alessano VII, Napoleone",
+              "elementi_iconici":"Obelisco Flaminio, Porta del Popolo, Fontana della Dea Roma, Chiese Gemelle(Santa Maria in Montesano e Santa Maria dei Miracoli), Leoni Egizi"
+            }
+          },
+          "storia": "Piazza del Popolo a Roma, antica porta d’ingresso lungo la Via Flaminia, accoglieva viaggiatori e monumenti funerari. Nel XVII secolo l’architetto Carlo Rainaldi progettò le chiese gemelle di Santa Maria in Montesanto e Santa Maria dei Miracoli per armonizzare la piazza, mentre all’inizio del XIX secolo Giuseppe Valadier la trasformò in una vasta scenografia ellittica con fontane e l’imponente obelisco centrale, simbolo della città.",
+          "curiosita": "Nella scena iniziale del film è possibile notareun breve cameo di Romy Schneider. L'attrice si trovava a Roma per raggiungere il fidanzato Alain Delon e il regista René Clément volle fortemente inserirla nel film, consolidando il legame tra la vita privata delle due star e le atmosfere dei caffè romani.",
+          "connessione_delon":"In una delle prime scene del film Delitto in pieno sole, Alain Delon (nei panni di Tom Ripley) e l'amico Philippe, dopo una sosta al bar, tentano di rimorchiare una donna fingendosi ciechi. Nei dintorni si trovano locali storici come il Caffè Rosati e il celebre ristorante Dal Bolognese, entrambi visibili nella pellicola.",
+          "metadata": {
+            "accessibilita": "gratuito, sempre accessibile",
+            "servizi": ["bagni pubblico", "bar e caffè", "Ristoranti e gelaterie"]
+          }
+        },
+        {
+          "numero": 2,
+          "poi_id": "castel_sant'angelo",
+          "orario_consigliato": "10:00",
+          "momento_giornata": "mattino",
+          "durata_visita_min": 60,
+          "coordinate": [41.9031, 12.4663],
+          "nome": "Castel Sant'Angelo",
+          "descrizione_breve": "Castel Sant'Angelo si erge imponente lungo il Tevere, simbolo della grandezza storica di Roma tra fasti imperiali e potere papale.",
+          "indicazioni_arrivo": "20 minuti a piedi attraverso le vie interne o percorrendo il Lungotevere.",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "20 min",
+            "distanza_km": 1.5
+          },
+          "esperienza_culturale": {
+            "cinema": {
+             "film_completo": "Che gioia vivere",
+              "attore": "Alain Delon",
+              "personaggio": "Ulisse Cecconato",
+              "scena": "Delon si arrampica per innalzare una bandiera anarchica fino alla Campana della Misericordia.",
+              "anno": "1961",
+              "descrizione_scena ": "Ulisse, interpretato da Alain Delon, si arrampica con fatica lungo le mura di Castel Sant’Angelo, sospeso tra vuoto e tensione. Lo fa per conquistare la fiducia degli anarchici, accettando la richiesta di Olindo Fossati e dimostrare il proprio coraggio. Raggiunta la cima vicino alla campana, issa la bandiera in un gesto audace e simbolico, carico di ribellione e intensità.",
+              "youtube_url": "https://youtu.be/BiJ_aYwcO1g?t=2900",
+              "note_visione": "Osservando Castel Sant’Angelo dall’esterno, si percepisce l’altezza raggiunta dall’attore fino alla sommità con la campana della Misericordia. Anche senza entrare, lo sguardo verso l’alto collega la scena del film alla realtà."
+            },
+            "letteratura": {
+              "citazione": "Salgo fino alla terrazza. Che gloria!… nell’aria limpida… rivela tutti i monti lontani…",
+              "autore": "Ugo Ojetti",
+              "opera": "Cose viste",
+              "anno": 1951,
+              "contesto": "Descrizione della vista dalla terrazza di Castel Sant’Angelo: ampia e luminosa,’aria limpida permette di vedere tutta Roma fino alle colline e ai monti lontani."
+            },
+            "atmosfera": {
+              "momento": "mattino",
+              "luce": "brillante e nitida",
+              "suoni_ambiente": [
+                "scorrere dell'acqua del Tevere",
+                "passi su scale di pietra",
+                "voci di passanti e turisti"
+              ],
+              "temperatura_stimata": "20-23°C",
+              "affollamento": "alto",
+              "consiglio_fotografico": "Posizione migliore per fotografare Castel Sant’Angelo è al centro di Ponte Sant’Angelo, dove il castello domina la scena, mentre dagli angoli del ponte o dalle sponde del Tevere si ottengono prospettive più ampie e suggestive con il riflesso sull’acqua.",
+              "emozione_target": "Energia, vitalità, potenza"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Romano/Medievale/Rinascimentale/Barocco",
+              "architetto": "Vari (Demetriano, Giuliano da Sangallo, Bernini)",
+              "committente": "Imperatore Adriano",
+              "periodo_costruzione": "135 d.C. - XVII sec",
+              "descrizione": "Mausoleo imperiale trasformato in fortezza e residenza papale",
+              "elementi_iconici": "Angelo di San Michele, Passetto di Borgo, Campana della Misericordia, Bastioni di Sangallo, Terrazza dell'Angelo",
+              "artisti_ospitati": ["Michelangelo Buonarroti", "Lorenzo Lotto", "Benvenuto Cellini", "Cagliostro"]
+            }
+          },
+          "storia": "Nato nel 135 d.C. come mausoleo per l'imperatore Adriano, il castello è un sopravvissuto millenario: da tomba imperiale a fortezza inespugnabile, fino a residenza papale e prigione. Il celebre 'Passetto di Borgo' lo collega ancora oggi ai palazzi vaticani, testimoniando secoli di intrighi, fughe e segreti della Roma pontificia.",
+          "curiosita": "Alain Delon scalò le pareti del castello senza alcuna controfigura. Nel film si vede chiaramente il pericolo autentico quando una pietra, smossa dalla mano dell'attore, precipita frantumandosi contro i bastioni sottostanti: un imprevisto che il regista decise di tenere per immortalare la tensione e il coraggio fisico di Delon.",
+          "connessione_delon": "Qui si svolge una delle scene più importanti del film Che gioia vivere: il protagonista, interpretato da Alain Delon nei panni di Ulisse, si arrampica fino alla campana per innalzare una bandiera anarchica. ",
+          "metadata": {
+          "accessibilita": "Ingresso a pagamento (€13 circa) o gratuito prime domeniche del mese. Ultimo ingresso ore 18:30.",
+          "orari_standard": "Mar-Dom 09:00 - 19:30. Chiuso il lunedì (salvo aperture straordinarie).",
+          "orari_speciali_tramonto": "Aperto a Pasqua e Pasquetta. Nota: Chiusura settimanale posticipata a martedì 7 aprile.",
+         "servizi": [
+        "visite guidate",
+        "libreria",
+        "biblioteca",
+        "bar con vista panoramica"
+    ]
+          }
+        },
+        {
+          "numero": 3,
+          "poi_id": "tempio_di_adriano",
+          "orario_consigliato": "12:00",
+          "momento_giornata": "mezzogiorno",
+          "durata_visita_min": 30,
+          "coordinate": [41.8993, 12.4797],
+          "nome": "Tempio di Adriano",
+          "descrizione_breve": "Tempio di Adriano si erge nel cuore del centro storico di Roma, dove le sue maestose colonne corinzie del II secolo d.C. si affiancano a un edificio moderno, creando un affascinante contrasto tra antico e contemporaneo.",
+          "indicazioni_arrivo": "18 minuti a piedi attraversando il Ponte Sant'Angelo",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "18 min",
+            "distanza_km": 1.3
+          },
+          "esperienza_culturale": {
+            "cinema": {
+             "film_completo": "L'eclisse",
+              "attore": "Alain Delon",
+              "personaggio": "Piero (l'agente di borsa)",
+              "scena": "Incontro tra Monica Vitti e Alain Delon",
+              "anno": "1962",
+              "descrizione_scena ": "Piero, interpretato da Alain Delon, lavora in Borsa e incontra il personaggio di Monica Vitti durante le contrattazioni. Dopo il crollo dei titoli, i due escono insieme e si fermano al bar davanti, dove parlano per la prima volta fuori da quel contesto e inizia il loro rapporto.",
+              "youtube_url": "https://youtu.be/ixFkI1BRXew?t=3620",
+              "note_visione": "Osservando la zona della Borsa e il bar vicino, si nota il passaggio dal ritmo frenetico delle contrattazioni a un momento più sospeso e silenzioso."
+            },
+            "letteratura": {
+              "citazione": "Le rovine di Roma insegnano più della storia: insegnano il tempo.",
+              "autore": "Johan Wolfgang von Goethe",
+              "opera": "Viaggio in Italia",
+              "anno": 1816,
+              "contesto": "Goethe, arrivato a Roma, capisce che le rovine non mostrano solo la grandezza antica,ma rendono visibile il passare del tempo e la trasformazione continua della città.."
+           },
+            "atmosfera": {
+              "momento": "mezzogiorno",
+              "luce": "intensa, ombre minime, riflessi chiari sulla pietra",
+              "suoni_ambiente": [
+                "rumori di bar-caffè",
+                "voci di centinaia di turisti",
+                "eco urbana tra i palazzi"
+              ],
+              "temperatura_stimata": "25-28°C (caldo pieno)",
+              "affollamento": "moderato",
+              "consiglio_fotografico": "Scatta dal lato opposto della piazza per includere l'intero prospetto monumentale.",
+              "emozione_target": "Stupore, sospensione nel tempo, rilassatezza"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Romano Imperiale/Corinzio",
+              "architetto": "Sconosciuto",
+              "anno_costruzione": "145 d.C.",
+              "committente": "Antonino Pio",
+              "artisti_ospitati": "Carlo Fontana, Vincenzo Pacetti",
+              "elementi_iconici": "Il Pronao, le 11 colonne corinzie, Inserimento nel Palazzo",
+              "descrizione": "Tempio ottastilo dedicato all'Imperatore Adriano divinizzato."
+            }
+          },
+          "storia": "Costruito nel 145 d.C. da Antonino Pio per celebrare l'imperatore Adriano, il tempio contava in origine quindici colonne marmoree sui lati lunghi. Nel 1695, le undici colonne superstiti furono inglobate da Carlo Fontana nel Palazzo della Dogana, creando un connubio unico tra architettura imperiale e barocca.",
+          "curiosita": "Una tappa vicina è Piazza Campitelli, dove avviene l'ultimo incontro tra Piero e Vittoria. I due si salutano giurandosi di rivedersi 'domani e dopodomani': una bugia romantica che trasforma il silenzio della piazza nell'addio più enigmatico del cinema di Antonioni.",
+          "connessione_delon": "Qui  si trova il luogo del primo incontro tra Delon e Monica Vitti nel film 'l'eclisse', la Borsa dove lavora Piero. Dopo il crollo della borsa, i protagonisti andarono al bar davanti al tempio, attualmente troviamo Salotto 42.",
+          "metadata": {
+          "accessibilita": "Esterno visibile 24/7; Interno gratuito (se accessibile) o a pagamento per eventi specifici",
+          "orari_standard": "Lun-Ven 10:00 - 19:00 (Soggetto a chiusure per conferenze istituzionali)",
+          "orari_speciali_tramonto": "Consigliato dopo il tramonto per lo spettacolo di luci 'Luci su Adriano' (proiezione gratuita sulle colonne esterne)",
+        "servizi": [
+        "proiezione multimediale Hadrianeum",
+        "sala istituzionale",
+        "infopoint",
+        "piazza pedonale"
+    ]
+}
+        },
+        {
+          "numero": 4,
+          "poi_id": "isola_tiberina",
+          "orario_consigliato": "15:30",
+          "momento_giornata": "pomeriggio",
+          "durata_visita_min": 45,
+          "coordinate": [41.8903, 12.4790],
+          "nome": "Isola Tiberina",
+          "descrizione_breve": "L'Isola Tiberina è l’unica isola urbana del Tevere nel centro di Roma, con la sua caratteristica forma a nave e collegata alle rive da antichi ponti romani, situata nei pressi della storica Cloaca Maxima.",
+          "indicazioni_arrivo": "Dal centro storico si raggiunge in circa 20 minuti a piedi oppure in 12 minuti con la linea 63 (4 fermate).",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "20 min",
+            "bus": "12 min con la linea 63",
+            "distanza_km": 1.3
+
+          },
+          "esperienza_culturale": {
+            "cinema": {
+              "film_completo": "Che gioia vivere",
+              "attore": "Alain Delon",
+              "personaggio": "Ulisse Cecconato",
+              "scena": "Fuga dal carcere con Barbara Lass",
+              "anno": "1961",
+              "descrizione_scena ": "Alain Delon fugge insieme a Franca, interpretata da Barbara Lass, attraversando la Cloaca Massima. I due percorrono il passaggio sotterraneo e riemergono vicino al Tevere. La scena mostra la fuga e il ritorno all’esterno, segnando un passaggio nel loro percorso.",
+              "youtube_url": "https://youtu.be/BiJ_aYwcO1g?t=4447",
+              "note_visione": "Osservando il tratto vicino al Tevere, si riconosce il punto in cui i personaggi riemergono dopo il passaggio sotterraneo della Cloaca Massima, segnando il ritorno alla luce. Sul fondo è visibile Isola Tiberina, riconoscibile anche dal ponte retrostante, che collega la scena del film allo spazio reale."
+            },
+            "letteratura": {
+              "citazione": "serpens… in insula constitit",
+              "autore": "Ovidio",
+              "opera": "Fasti,libro I",
+              "data": "I secolo d.C.",
+               "contesto": "Ovidio racconta che il serpente sacro di Esculapio si fermò proprio su quest’isola, trasformandola in un luogo dedicato alla guarigione."
+            },
+            "atmosfera": {
+              "momento": "pomeriggio",
+              "luce": "dorata, morbida e riflessa",
+              "suoni_ambiente": [
+                "canto degli uccelli-gabbiani",
+                "fruscio degli alberi",
+                "scorrere dell'acqua del Tevere"
+              ],
+              "temperatura_stimata": "18-22°C (temperatura ideale)",
+              "affollamento": "basso (area meno turistica)",
+              "consiglio_fotografico": "Per fotografare l’Isola Tiberina, sfrutta le prospettive dai ponti storici come Ponte Palatino, Ponte Fabricio e Ponte Cestio, oppure la riva del Tevere al tardo pomeriggio, quando la luce dorata illumina l’isola a forma di imbarcazione e i riflessi sull’acqua creano atmosfere suggestive.",
+              "emozione_target": "Calma, pace, meraviglia storica"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Romano/Medievale/Barocco",
+              "architetto": "Martino Longhi il Vecchio ( Basilica), L.Fabricius (Ponte)",
+              "anno_costruzione": "291 a.C. (Tempio), 62 a.C.(Ponte), 1599 (Facciata Chiesa)",
+              "committente": "Senato Romano (Tempio), Famiglia Caetani (Torre), Papa Pasquale II",
+              "descrizione": "Unica isola urbana di Roma, storicamente dedicata alla cura dei malati.",
+              "elementi_iconici":"Prua della Nave in travertino, Ponte Fabricio, Torre della Pulzella, Ospedale Fatebenefratelli, Basilica di San Bartolomeo all'Isola"
+            }
+          },
+          "storia": "Sede del tempio di Esculapio dal 291 a.C., l'isola è da millenni il centro della medicina romana. La sua forma a scafo di nave celebra la leggenda del dio che, sotto forma di serpente, scelse questo luogo per proteggere la città.",
+          "curiosita": "Ogni estate l’isola si trasforma in un cinema galleggiante con il festival 'L’Isola del Cinema'. È un omaggio continuo al grande schermo che ha celebrato spesso il legame tra Roma e la Francia, proiettando i classici dei grandi divi europei sotto le stelle.",
+          "connessione_delon": "Nel film Che gioia vivere, il personaggio interpretato da Alain Delon fugge insieme a Franca attraverso la Cloaca Massima, riemergendo sulle sponde del Tevere. La scena, ambientata lungo il Lungotevere Aventino da dove i protagonisti puntano poi verso l’Isola Tiberina, rappresenta il momento della fuga e del ritorno alla luce, collegando la pellicola a uno dei luoghi più antichi della città.",
+          "metadata": {
+"accessibilita": "Ingresso all'isola libero; visite guidate ai siti speciali su prenotazione obbligatoria (€12 - €25)",
+    "orari_standard": "Isola sempre accessibile; Basilica S. Bartolomeo solitamente 09:30-17:30 (dom 09:30-13:00)",
+    "orari_speciali_tramonto": "Consigliata passeggiata sui ponti Fabricio e Cestio al calar del sole per la vista sul Tevere",
+    "servizi": "sotterranei di S. Bartolomeo, cripta dei Sacconi Rossi, tour combinati Ghetto Ebraico, noleggio auricolari per gruppi, ospedale Fatebenefratelli"
+          }
+        },
+        {
+          "numero": 5,
+          "poi_id": "terme_di_caracalla",
+          "orario_consigliato": "17:30",
+          "momento_giornata": "tramonto",
+          "durata_visita_min": 45,
+          "coordinate": [41.8790, 12.4922],
+          "nome": "Terme di Caracalla",
+          "descrizione_breve": "Le Terme di Caracalla, un grandioso complesso del III secolo d.C., erano un centro sociale con bagni, palestre e giardini; oggi restano suggestive rovine che ne raccontano la magnificenza.",
+          "indicazioni_arrivo": " Dalle Terme di Caracalla cammina 6 minuti fino alla fermata Porta Capena, poi prendi le linee 118 o 628, scendi e prosegui a piedi per circa 7 minuti (totale circa 17 minuti); in alternativa, circa 28 minuti a piedi passando per la zona di Porta Capena.",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "28 min",
+            "bus": "17 min con le linee 118 o 628",
+            "distanza_km": 2.00
+          },
+          "esperienza_culturale": {
+            "cinema": {
+             "film_completo": "Che gioia vivere",
+              "attore": "Alain Delon",
+              "personaggio": "Ulisse Cecconato",
+              "scena": "La fiera della pace",
+              "anno": "1961",
+              "descrizione_scena": "Nella scena finale durante la fiera della pace alcuni fascisti progettano un attentato per incolpare gli anarchici, ma il protagonista interpretato da Alain Delon interviene. Tra tensione e ironia, il complotto viene sventato, rivelando il contrasto tra festa e violenza nascosta.",
+              "youtube_url": "https://youtu.be/BiJ_aYwcO1g?t=5804",
+              "note_visione": "Osservando le Terme di Caracalla oggi, si nota il contrasto tra le rovine attuali e le scenografie temporanee del film. Ancora oggi lo spazio ospita eventi, richiamando la sua vocazione spettacolare e permettendo di immaginare l’allestimento della “Fiera della Pace”."
+            },
+            "letteratura": {
+              "citazione": "O terme, o terme... tra il Celio e l'Aventino sorge l'antico a me.",
+              "autore": "Giosue Carducci",
+              "opera": "Dinanzi alle Terme di Caracalla",
+              "anno": 1877,
+              "contesto": "Carducci osserva le rovine delle Terme di Caracalla come simbolo della grandezza di Roma antica, contrapponendola alla decadenza del presente e evocando un senso di nostalgia e maestosita perduta."
+            },
+            "atmosfera": {
+              "momento": "tramonto",
+              "luce": "dorata, arancione, poi violacea",
+              "suoni_ambiente": [
+                "canto degli uccelli al crepuscolo",
+                "campane di chiese in lontananza",
+                "scroscio delicato della fontana"
+              ],
+              "temperatura_stimata": "18-22°C (temperatura ideale)",
+              "affollamento": "basso nel tardo pomeriggio, alto durante il weekend",
+              "consiglio_fotografico": "Posizionati davanti all’ingresso principale o all’interno del cortile centrale, approfittando della luce del tardo pomeriggio che illumina le enormi volte e mette in risalto la grandiosità delle rovine antiche.",
+              "emozione_target": "Nostalgia, pace, contemplazione"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Romano Imperiale",
+              "architetto": "Sconosciuto (Corpo tecnico imperiale)",
+              "committente": "Imperatore Caracalla (Marco Aurelio Antonino)",
+              "periodo_costruzione": "212 d.C. - 216 d.C.",
+              "descrizione": "Complesso termale di 11 ettari, esempio massimo di ingegneria idraulica e sfarzo imperiale.",
+              "artisti_ospitati": ["Glicone di Atene (scultore)", "Maestranze dei mosaici severiani", "Pietro Cavallini (per i restauri medievali)"],
+              "elementi_iconici": ["Calidarium (grande aula circolare per i bagni caldi)", "Natatio (piscina monumentale all'aperto)", "Mosaico degli Atleti (conservato ai Musei Vaticani)", "Ercole Farnese (ritrovato qui nel 1546)", "Mitreo sotterraneo (il più grande di Roma)"]
+            }
+          },
+          "storia": "Inaugurate nel 216 d.C. dall'imperatore Caracalla, le Terme erano uno dei più grandiosi complessi edilizi dell'antichità. Dopo secoli di abbandono, nel Novecento sono diventate una sede prestigiosa per l'opera lirica e un set cinematografico monumentale, simbolo della maestosità di Roma nel mondo",
+          "curiosita": "I sotterranei delle Terme venivano usati come enormi camerini e depositi per i costumi. Si dice che camminare tra quei tunnel faccia sentire ancora oggi l'eco dei grandi attori del passato che, tra un ciak e l'altro, si aggiravano in costume tra le mura imperiali.",
+          "connessione_delon": "Qui è stata girata la scena finale del film Che gioia vivere con Alain Delon, ambientata durante una “Fiera della Pace”. Questo momento rappresenta il culmine del film ed è reso ancora più spettacolare dallo scenario monumentale delle terme, spesso utilizzate come set cinematografico negli anni ’50 e ’60.",
+          "metadata": {
+            "accessibilita": "Ingresso su prenotazione (€8-10). Nota: L'ingresso alle 17:30 è possibile solo da fine marzo a fine settembre.",
+            "orari_standard": "Mar-Dom dalle 09:00. Chiusura variabile (16:30 in inverno, fino alle 19:15 in estate).",
+            "orari_speciali_tramonto": "Consigliato l'arrivo alle 17:30 (da fine marzo) per godere della luce del tramonto sulle rovine.",
+            "servizi": ["visite guidate", "audioguide", "accessibile disabili", "bookshop"]
+
+
+
+
+
+          }
+        }
+         ],
+      "mappa_percorso": {
+        "polyline_encoded": "esempio_encoded_string", 
+        "colore_percorso": "#4a90e2",
+        "stile_linea": "solid"
+      },
+      "consigli_pratici": [
+        "Portare bottiglia d'acqua riutilizzabile (fontanelle romane lungo il percorso)",
+        "Scarpe comode obbligatorie (6.3 km a piedi)",
+        "Cappello e crema solare per mezzogiorno",
+        "Cuffie di buona qualità per ascoltare la musica",
+        "Prenotare in anticipo Terme di Caracalla e Castel Sant'Angelo",
+        "Considerare pausa pranzo dopo Tempio di Adriano (molti ristoranti in zona)"
+      ],
+      "migliore_periodo_anno": "Marzo-Ottobre (luce migliore, temperature miti)",
+      "sconsigliato": ["Pieno inverno"],
+      "cosa_portare": [
+        "Smartphone con app mappe",
+        "Cuffie/auricolari",
+        "Bottiglia acqua",
+        "Cappello",
+        "Crema solare",
+        "Snack energetici",
+        "Batteria portatile"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>La Roma di Alain Delon</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+   
+
+    <style>
+
+        /* STILI BASE */
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body { font-family: 'Poppins', sans-serif; background-color: #04192f; color: white; overflow-x: hidden; }
+
+
+
+        /* NAVBAR */
+
+        .navbar { position: absolute; top: 0; width: 100%; display: flex; justify-content: flex-end; padding: 30px 50px; z-index: 100; }
+
+        .nav-menu { display: flex; list-style: none; gap: 40px; }
+
+        .nav-menu a { color: white; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 16px; letter-spacing: 1px; }
+
+
+
+        /* HERO */
+
+        .hero-banner { position: relative; width: 100%; height: 100vh; display: flex; align-items: center; justify-content: flex-start; padding-left: 80px; }
+
+        .hero-image { position: absolute; right: 0; top: 0; width: 100%; height: 100%; background: url("https://i.ibb.co/zhw6wBnR/alain-delon2.jpg[/img][/url]") center/cover; z-index: 1; }
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Modifica lo 0.9 in 0.5 per "pulire" l'immagine */
+    background: linear-gradient(to right, rgba(4,25,47,0.5) 20%, transparent 90%);
+    z-index: 2;
+}
+        .hero-content { position: relative; z-index: 10; max-width: 700px; }
+
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: 75px; line-height: 1.1; margin-bottom: 20px; }
+        .hero-content h1 {
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-content { 
+    position: relative; 
+    left: -50px; 
+    z-index: 10; 
+    max-width: 700px; 
+    padding-left: 20px; /* Assicurati che non tocchi proprio il bordo dello schermo */
+}
+.btn-outline { 
+    display: inline-block; 
+    padding: 12px 35px; /* Un po' più sottile ma largo */
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Bordo più sottile e meno "pesante" */
+    color: white; 
+    text-decoration: none; 
+    border-radius: 2px; /* Rimuovi l'effetto "pillola" e fallo quasi squadrato (più cinema anni '60) */
+    font-weight: 400; /* Font meno grassetto per un look più premium */
+    letter-spacing: 2px; /* Lettere più distanziate (stile locandina film) */
+    text-transform: uppercase; /* Scritta tutta in maiuscolo */
+    font-size: 14px;
+    transition: 0.4s; 
+    margin-top: 10px;
+}
+
+.btn-outline:hover { 
+    background: white; 
+    color: #04192f; 
+    letter-spacing: 4px; /* Effetto animazione carina quando ci passi sopra */
+}
+
+
+        /* SEZIONE SCOPRI */
+
+        .scopri-section { background-color: white; padding: 80px 50px; color: #04192f; }
+
+        .scopri-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: flex-start; }
+
+        .scopri-card h2 { font-family: 'Playfair Display', serif; font-size: 35px; margin-bottom: 20px; }
+
+        .scopri-card img { width: 100%; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+        .btn-blue { background: #04192f; color: white; padding: 15px 40px; border-radius: 50px; border: none; cursor: pointer; font-weight: 600; }
+
+
+
+        .map-info-box { margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+
+        .info-item { background: #f4f7f9; padding: 20px 10px; border-radius: 12px; text-align: center; border: 1px solid #e0e6ed; }
+
+        .info-item i { color: #04192f; margin-bottom: 10px; font-size: 35px; display: block; }
+
+        .info-item p { font-size: 14px; font-weight: 700; color: #04192f; }
+/* Contenitore per centrarlo */
+.scroll-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+/* Il Cerchio Deformato */
+.circle-deformed {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    
+    /* Colore del bordo e del testo */
+    color: #031222; 
+    border: 2px solid #031222;
+    
+    /* La forma deformata (non un cerchio perfetto) */
+    border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%;
+    
+    /* Animazione fluida */
+    animation: deform 8s infinite alternate ease-in-out;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+/* Testo dentro il cerchio */
+.circle-deformed span {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+/* Animazione che cambia la forma del cerchio */
+@keyframes deform {
+    0% { border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%; }
+    50% { border-radius: 66% 34% 41% 59% / 51% 63% 37% 49%; }
+    100% { border-radius: 41% 59% 51% 49% / 58% 42% 58% 42%; }
+}
+
+/* Effetto al passaggio del mouse */
+.circle-deformed:hover {
+    background-color: rgba(3, 18, 34, 0.05);
+    transform: scale(1.05) rotate(5deg);
+    border-color: #4a90e2;
+    color: #4a90e2;
+}
+
+
+        /* GALLERIA HOME (REINTEGRATA) */
+
+        .sezione-galleria-home { background-color: #04192f; padding: 80px 50px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+        .sezione-galleria-home h2 { font-family: 'Playfair Display', serif; font-size: 40px; color: white; margin-bottom: 40px; text-align: center; }
+
+        .grid-galleria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1100px; margin: 0 auto; }
+
+        .grid-galleria img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; border: 2px solid rgba(74, 144, 226, 0.3); transition: 0.3s; cursor: pointer; }
+
+        .grid-galleria img:hover { border-color: #4a90e2; transform: translateY(-5px); }
+
+
+
+   /* TAPPA LAYOUT - ORA SEMPRE VISIBILE */
+#sezione-itinerario { 
+    display: block !important; /* Forza la visibilità */
+    padding: 80px 20px; 
+    background-color: #031222; 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+}
+
+.tappa-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 450px 1fr; gap: 50px; align-items: start; }
+
+.tappa-left { width: 450px; }
+
+.tappa-img-box { width: 100%; height: 450px; border-radius: 20px; overflow: hidden; background: #111; }
+
+.tappa-img-box img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+
+.galleria-tappa-mini { display: flex; gap: 10px; margin-top: 15px; overflow-x: auto; padding-bottom: 8px; }
+
+.thumb-tappa { width: 70px; height: 60px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; flex-shrink: 0; }
+
+.thumb-tappa:hover { border-color: #4a90e2; }
+
+.tappa-right { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+
+.tappa-right h4 { color: #4a90e2; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
+
+.tappa-right p { 
+    color: white !important; 
+    opacity: 1 !important; 
+}
+
+.delon-focus p { 
+    color: white !important; 
+    opacity: 0.9; 
+}
+
+.delon-focus div {
+    color: #97aaca !important; 
+    opacity: 1 !important;
+}
+
+.tappa-right div {
+    color: #97aaca !important; 
+    opacity: 1 !important;     
+    font-weight: 600;          
+}
+
+.tappa-right h2 { font-family: 'Playfair Display', serif; font-size: 42px; color: white; line-height: 1.1; }
+
+.actions-row { display: flex; gap: 15px; margin: 5px 0; }
+
+.btn-action { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 10px 20px; border-radius: 10px; cursor: pointer; font-size: 13px; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+
+#photo-tip-box { display: none; background: #072342; color: white; padding: 15px; border-radius: 10px; font-size: 13px; margin-top: 5px; }
+
+.delon-focus { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border-left: 4px solid #4a90e2; margin-top: 5px; }
+
+
+
+
+        /* CONTATTI (REINTEGRATA) */
+
+        #contatti { background: #04192f; min-height: 80vh; padding: 80px 10%; display: flex; align-items: center; justify-content: center; border-top: 1px solid rgba(255,255,255,0.1); }
+
+        .container-flex { display: flex; align-items: center; gap: 100px; width: 100%; max-width: 1400px; }
+
+        .contact-map-side { flex: 1.5; height: 500px; border-radius: 30px; overflow: hidden; }
+
+        .contact-text-side { flex: 1; color:#e0e6ed; }
+
+        .contact-text-side h2 { font-family: 'Playfair Display', serif; font-size: 50px; margin-bottom: 30px; color: #fff }
+
+        .contact-info-item { display: flex; align-items: center; gap: 20px; font-size: 18px; margin-bottom: 20px; }
+
+        .contact-info-item i { color: #4a90e2; }
+
+
+
+        /* LIGHTBOX */
+        /* --- AGGIUNGI DA QUI --- */
+.lightbox-overlay {
+    display: none; 
+    position: fixed; 
+    z-index: 9999;
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.95); 
+    align-items: center; 
+    justify-content: center;
+}
+
+.lightbox-img { 
+    max-width: 85%; 
+    max-height: 80%; 
+    border-radius: 10px; 
+    box-shadow: 0 0 25px rgba(74, 144, 226, 0.3); 
+    object-fit: contain;
+}
+
+.lb-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 50px; cursor: pointer; z-index: 10000; }
+.lb-arrow { 
+    position: absolute; top: 50%; transform: translateY(-50%);
+    color: white; font-size: 60px; cursor: pointer; padding: 20px; 
+    background: none; border: none; transition: 0.3s;
+}
+.lb-arrow:hover { color: #4a90e2; }
+.lb-prev { left: 10px; }
+.lb-next { right: 10px; }
+/* --- A QUI --- */
+
+        .lightbox { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
+
+        .lightbox-content { max-width: 85%; max-height: 80%; border-radius: 10px; }
+
+        .nav-lightbox { position: absolute; top: 50%; color: white; font-size: 40px; cursor: pointer; padding: 20px; user-select: none; z-index: 2100; }
+
+        .prev { left: 20px; }
+
+        .next { right: 20px; }
+
+        .close-lightbox { position: absolute; top: 30px; right: 40px; color: white; font-size: 50px; cursor: pointer; z-index: 2100; }
+
+        :root {
+            --roman-red: #221750;
+            --gold: #97aaca;
+            --light-grey: #f4f4f4;
+            --dark: #222;
+            --cream: #f5f1ee;
+        }
+        
+        /* Reset e Base */
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--dark); 
+            margin: 0; 
+            padding: 0; 
+            background: #fff; 
+            scroll-behavior: smooth;
+        }
+
+        /* Sezione Servizi (Inizio) */
+        #servizi {
+            background: var(--cream);
+            padding: 80px 20px;
+            color: #181645;
+            text-align: center;
+        }
+        .servizi-container { max-width: 1100px; margin: 0 auto; }
+        .servizi-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            margin: 40px auto; 
+            max-width: 900px; 
+        }
+        .servizio-item img { width: 100%; border-radius: 20px; object-fit: cover; height: 200px; }
+        
+        /* Bottone di collegamento */
+        .cta-button {
+            display: inline-block;
+            background: #181645;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        .cta-button:hover { background: var(--gold); color: #181645; }
+
+        /* Header Itinerario */
+        header { background: var(--roman-red); color: white; padding: 60px 20px; text-align: center; }
+        
+        /* Contenuto Itinerario */
+        .container { max-width: 850px; margin: 20px auto; padding: 20px; }
+        .tappa { border-left: 5px solid var(--gold); padding: 0 0 40px 30px; margin-left: 20px; position: relative; }
+        .tappa::before { content: ''; position: absolute; left: -13px; top: 0; width: 21px; height: 21px; background: var(--roman-red); border-radius: 50%; border: 3px solid white; }
+        
+        h2 { margin-top: 0; color: var(--roman-red); text-transform: uppercase; letter-spacing: 1px; }
+        .info-box { background: var(--light-grey); padding: 20px; border-radius: 8px; margin-top: 15px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        .label { font-weight: bold; color: #555; }
+        .iconic-elements { background: #b0ccd3; border: 1px solid #e6dbb9; padding: 10px 15px; border-radius: 5px; margin-top: 10px; font-size: 0.95em; }
+        
+        .link-button { 
+            display: inline-block; 
+            background: var(--gold); 
+            color: white; 
+            padding: 8px 15px; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-size: 0.9em; 
+            margin-top: 10px; 
+            transition: 0.3s; 
+        }
+        .link-button:hover { background: var(--roman-red); }
+        
+        .sosta-pranzo { border: 2px dashed var(--gold); padding: 20px; margin: 30px 0; background: #fffdf5; border-radius: 8px; }
+        .tag-price { color: #27ae60; font-weight: bold; }
+
+        /* NUOVO STILE PER LA TABELLA FINALE (CARATTERISTICHE DEL TOUR) */
+        .tour-features {
+            background-color: #181645;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        .tour-features h2 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        .feature-item h3 {
+            color: #97aaca;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        .feature-item p, .feature-item ul {
+            font-size: 0.9em;
+            line-height: 1.8;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .feature-item li {
+            margin-bottom: 8px;
+        }
+
+        /* --- AGGIUNTA TASTO TORNA HOME --- */
+.back-to-home {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #04192f;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: all 0.4s ease;
+    opacity: 0;           /* Inizialmente invisibile */
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.back-to-home.visible {
+    opacity: 1;           /* Diventa visibile quando l'utente scende */
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-home:hover {
+    background-color: #4a90e2;
+    transform: translateY(-5px);
+    color: white;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <nav class="navbar">
+
+        <ul class="nav-menu">
+         
+
+            <li><a href="bbb.html">Home</a></li>
+           <li><a href="#about">Profilo</a></li>
+
+            <li><a href="#scopri">Scopri</a></li>
+            <li><a href="#servizi">Servizi</a></li            <li><a href="#galleria-home">Galleria</a></li>
+
+            <li><a href="#contatti">Contatti</a></li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <header class="hero-banner">
+
+        <div class="hero-image"></div>
+
+        <div class="gradient-overlay"></div>
+
+        <div class="hero-content">
+
+            <h1>La Roma di<br>Alain Delon</h1>
+
+            <p>Tra cinema e realtà nella 'Hollywood sul Tevere'.</p>
+
+            <a href="#scopri" class="btn-outline">Scopri il percorso</a>
+
+        </div>
+
+    </header>
+  <section id="about" style="
+    width:100%;
+    background:#f5f5f5;
+    padding:40px 0;
+    font-family:Arial, sans-serif;
+">
+
+
+    <!-- CONTENITORE CENTRALE -->
+    <div style="
+        width:90%;
+        max-width:1200px;
+        margin:auto;
+        background:white;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+    ">
+
+        <!-- PARTE SOPRA -->
+        <div style="
+            height:250px;
+            background-image:url('https://i.ibb.co/rR25p21V/IMG-7227.jpg');
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        ">
+            <h1 style="
+                color:white;
+                font-size:38px;
+                text-align:center;
+                background:rgba(0,0,0,0.5);
+                padding:15px 30px;
+                border-radius:8px;
+            ">
+                Esplora Roma con gli occhi di Alain Delon
+            </h1>
+        </div>
+
+        <!-- PARTE SOTTO -->
+        <div style="
+            padding:50px;
+        ">
+
+            <h2 style="
+                text-align:center;
+                margin-bottom:30px;
+            ">
+                La passeggiata
+            </h2>
+
+            <div style="
+                display:flex;
+                align-items:flex-start;
+            ">
+
+                <!-- FOTO -->
+                <img src="https://i.ibb.co/RG7BkPSR/IMG-7222.jpg" style="
+                    width:300px;
+                    margin-right:40px;
+                ">
+
+                <!-- TESTO -->
+                <p style="
+                    font-size:16px;
+                    line-height:1.7;
+                    color:#222;
+                    max-width: 700px;
+                ">
+               Alain Delon è stato un celebre attore e icona del cinema mondiale, nato in Francia nel 1935 e scomparso nel 2024. Amava definirsi 'francese di nascita e italiano di cuore', perché proprio in Italia è iniziata la sua straordinaria carriera. È diventato famoso soprattutto per il fascino e l’eleganza sullo schermo tra gli anni '60 e '80, interpretando personaggi di grande impatto. Ha lavorato con importanti registi come: René Clément, che lo ha diretto in Delitto in pieno sole (1960) e Che gioia vivere (1961) e Michelangelo Antonioni, con cui ha collaborato nel film L'eclisse (1962). La sua versatilità gli ha permesso di passare dal noir al dramma d'autore con grande maestria. Delon ha lasciato un'impronta indelebile nel cinema internazionale, contribuendo a rendere la Città Eterna un set cinematografico vivace e monumentale.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+    <section id="scopri" class="scopri-section">
+
+
+        <div class="scopri-container">
+
+            <div class="scopri-card">
+
+                <h2>Il percorso</h2>
+
+                <img src="https://i.ibb.co/Y789MhGr/IMG-7178.jpg" alt="percorso">
+
+                <p id="main-desc" style="margin: 25px 0; font-size: 15px; line-height: 1.6;"></p>
+
+<div class="scroll-wrap">
+    <a href="#sezione-itinerario" class="circle-deformed">
+        <span>Scopri<br>le tappe</span>
+    </a>
+</div>
+            </div>
+
+            <div>
+
+                <div style="height: 380px; border-radius: 20px; overflow: hidden;">
+
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1pSqMTRvWJCCkC11mIABTEO9tp_FPFTs&ehbc=2E312F" width="640" height="480"></iframe>
+                </div>
+
+                <div class="map-info-box">
+
+                    <div class="info-item"><i class="fas fa-walking"></i><p>6.3 km</p></div>
+
+                    <div class="info-item"><i class="fas fa-clock"></i><p>9 ore</p></div>
+
+                    <div class="info-item"><i class="fas fa-calendar-alt"></i><p>Mar-Lug</p></div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+    
+
+    <section id="sezione-itinerario">
+
+        <div id="target-itinerario" class="tappa-container"></div>
+
+    </section>
+    
+<section id="servizi">
+    <div class="servizi-container">
+        <h2 style="font-family:'Playfair Display', serif; font-size:50px; margin-bottom:10px;">Servizi e Informazioni</h2>
+        <p style="margin-bottom:40px; font-style:italic;">Lasciati sorprendere</p>
+
+        <div class="servizi-grid">
+            <div class="servizio-item">
+                <img src="https://i.ibb.co/LzKLrT1d/IMG-7240.jpg" alt="Tour">
+                <h4 style="margin-top:10px;">Organizzazione del tour</h4>
+                <p style="font-size:13px;">Visita iconica dei luoghi più affascinanti della Roma cinematografica.</p>
+            </div>
+
+            <div class="servizio-item">
+                <img src="https://i.ibb.co/9kV2CpV3/IMG-7239.jpg" alt="Ristorazione">
+                <h4 style="margin-top:10px;">Ristorazione</h4>
+                <p style="font-size:13px;">Assapora la cucina romana durante il percorso.</p>
+            </div>
+
+            <div class="servizio-item">
+                <img src="https://i.ibb.co/ycqjVRMZ/IMG-7241.jpg" alt="Esperienze">
+                <h4 style="margin-top:10px;">Esperienze</h4>
+                <p style="font-size:13px;">Cinema, cultura e momenti unici lungo il tour.</p>
+            </div>
+        </div>
+
+        <a href="#itinerario-start" class="cta-button">Scopri l'itinerario completo ↓</a>
+    </div>
+</section>
+
+<header id="itinerario-start">
+    <h1>Programma Itinerario Alain Delon</h1>
+    <p>Roma: Cinema, Storia e Dolce Vita</p>
+</header>
+
+<div class="container">
+
+    <div class="tappa">
+        <h2>1. Piazza del Popolo</h2>
+        <div class="info-grid">
+            <div><span class="label">Momento:</span> Prima mattinata</div>
+            <div><span class="label">Orario consigliato:</span> 09:00</div>
+            <div><span class="label">Durata visita:</span> 40 min</div>
+            <div><span class="label">Costi:</span> Gratuito</div>
+        </div>
+        <div class="iconic-elements">
+            <strong>✨ Elementi Iconici:</strong> Obelisco Flaminio, Porta del Popolo, Fontana della Dea Roma, Chiese Gemelle, Leoni Egizi.
+        </div>
+        <div class="info-box">
+            <strong>Bar Consigliato:</strong> Caffè Rosati.
+            <br><a href="https://www.barrosati.it/" class="link-button" target="_blank">Sito Caffè Rosati</a>
+        </div>
+    </div>
+
+    <div class="tappa">
+        <h2>2. Castel Sant'Angelo</h2>
+        <div class="info-grid">
+            <div><span class="label">Momento:</span> Mattino</div>
+            <div><span class="label">Orario consigliato:</span> 10:00</div>
+            <div><span class="label">Durata visita:</span> 60 min</div>
+            <div><span class="label">Costi:</span> <span class="tag-price">In base all'età</span></div>
+        </div>
+        <div class="iconic-elements">
+            <strong>✨ Elementi Iconici:</strong> Angelo di San Michele, Passetto di Borgo, Campana della Misericordia, Bastioni di Sangallo.
+        </div>
+        <p>Esplora i bastioni dove Delon scalò le pareti senza controfigura.</p>
+        <a href="https://ticketing.coopculture.it/catalog/BE90C17E-A60E-F8ED-3736-0198628DEE88" class="link-button" target="_blank">Prenota Visita</a>
+    </div>
+
+    <div class="tappa">
+        <h2>3. Tempio di Adriano</h2>
+        <div class="info-grid">
+            <div><span class="label">Momento:</span> Mezzogiorno</div>
+            <div><span class="label">Orario consigliato:</span> 12:00</div>
+            <div><span class="label">Durata visita:</span> 30 min</div>
+            <div><span class="label">Costi:</span> Gratuito</div>
+        </div>
+        <div class="info-box">
+            <strong>Bar Consigliato:</strong> Salotto 42.
+            <br><a href="https://www.salotto42.it/" class="link-button" target="_blank">Sito Salotto 42</a>
+        </div>
+    </div>
+
+    <div class="sosta-pranzo">
+        <h2>🍽️ Sosta Pranzo</h2>
+        <p>Sosta consigliata tra le vie del centro storico vicino al Pantheon.</p>
+        <a href="https://www.armandoalpantheon.it/" class="link-button" target="_blank">Armando al Pantheon</a>
+           <a href="https://www.pantharei.it/" class="link-button" target="_blank">Pantha Rei</a>
+        <a href="https://www.facebook.com/lasagrestia" class="link-button" target="_blank">Ristorante Pizzeria La Sacrestia</a>
+    </div>
+
+    <div class="tappa">
+        <h2>4. Isola Tiberina</h2>
+        <div class="info-grid">
+            <div><span class="label">Momento:</span> Pomeriggio</div>
+            <div><span class="label">Orario consigliato:</span> 15:30</div>
+            <div><span class="label">Durata visita:</span> 45 min</div>
+            <div><span class="label">Costi:</span> Gratuito</div>
+        </div>
+        <div class="iconic-elements">
+            <strong>✨ Elementi Iconici:</strong> Prua della Nave, Ponte Fabricio, Torre della Pulzella, Basilica di San Bartolomeo.
+        </div>
+        <div class="info-box">
+            <strong>Esperienza Facoltativa:</strong> Esplora i sotterranei della Basilica o il cinema all'aperto estivo.
+            <br>
+            <a href="https://www.sanbartolomeo.org/" class="link-button" target="_blank">Sito Basilica</a>
+            <a href="https://isoladelcinema.com/" class="link-button" target="_blank">Isola del Cinema</a>
+        </div>
+    </div>
+
+    <div class="tappa" style="border:none;">
+        <h2>5. Terme di Caracalla</h2>
+        <div class="info-grid">
+            <div><span class="label">Momento:</span> Tramonto</div>
+            <div><span class="label">Orario consigliato:</span> 17:30</div>
+            <div><span class="label">Durata visita:</span> 45-60 min</div>
+            <div><span class="label">Costi:</span> <span class="tag-price">in base all'età</span></div>
+        </div>
+        <div class="info-box">
+            <strong>Esperienza:</strong> Ammira le rovine monumentali della "Fiera della Pace".
+        </div>
+        <a href="https://www.museiitaliani.it/musei/c763f66b-8295-4800-a92d-b96a26659396" class="link-button" target="_blank">Biglietteria Ufficiale</a>
+    </div>
+
+    <section class="tour-features">
+        <h2>Caratteristiche del tour</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Come Arrivare</h3>
+                <p>
+                    <strong>Inizio:</strong> Metro A Flaminio.<br>
+                    <strong>Percorso:</strong> 6.3 km a piedi.<br>
+                    <strong>Mezzi consigliati:</strong> 12 minuti a piedi e linea 63 per l'Isola Tiberina, linea 118 o 628 per le Terme di Caracalla.
+                </p>
+            </div>
+            <div class="feature-item">
+                <h3>Consigli Pratici</h3>
+                <ul>
+                    <li>✓ Prenotare siti 48h prima</li>
+                    <li>✓ Acqua dai "nasoni" romani</li>
+                    <li>✓ Pausa pranzo zona Pantheon</li>
+                    <li>✓ Cuffie per i video del tour</li>
+                </ul>
+            </div>
+            <div class="feature-item">
+                <h3>Cosa Portare</h3>
+                <ul>
+                    <li>📱 Smartphone & Powerbank</li>
+                    <li>👟 Scarpe molto comode</li>
+                    <li>☀️ Cappello & Crema solare</li>
+                    <li>🥪 Snack energetici</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+    <section id="galleria-home" class="sezione-galleria-home">
+
+        <h2>Galleria</h2>
+
+        <div class="grid-galleria">
+
+            <img src="https://i.ibb.co/5Xz5pqks/97-B42-B1-E-B02-F-4-D6-C-AC43-3-BAEBCDD42-BF.jpg" alt="Foto 1">
+
+            <img src="https://i.ibb.co/sJQQfpn2/IMG-6946.jpg" alt="Foto 2">
+
+            <img src="https://i.ibb.co/VprJgPS3/IMG-7205.jpg" alt="Foto 3">
+
+            <img src="https://i.ibb.co/kVYhdYzb/IMG-7202.jpg" alt="Foto 4">
+
+            <img src="https://i.ibb.co/HLT13BwT/IMG-7203.jpg" alt="Foto 5">
+
+            <img src="https://i.ibb.co/fVPF16c2/80335001-C829-4124-AF71-93022-DFE016-F.jpg" alt="Foto 6">
+
+            <img src="https://i.ibb.co/bjkyvzbF/IMG-6978.jpg" alt="Foto 7">
+
+            <img src="https://i.ibb.co/ccdHSRxz/IMG-6967.jpg" alt="Foto 8">
+
+            <img src="https://i.ibb.co/Zz5ZFvT7/IMG-7206.jpg" alt="Foto 9">
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <section id="contatti">
+
+        <div class="container-flex">
+
+            <div class="contact-text-side">
+
+                <h2>Contatti</h2>
+
+                <div class="contact-info-item"><i class="fas fa-envelope"></i><span>elisa.baccianella@students.uniroma2.eu</span></div>
+
+                <div class="contact-info-item"><i class="fas fa-map-marker-alt"></i><span>Via del Politecnico 1, Roma</span></div>
+
+            </div>
+
+            <div class="contact-map-side">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.612507856!2d12.6225!3d41.8546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f7db20857739d%3A0x6b77227495b283b8!2sVia%20del%20Politecnico%2C%201%2C%2000133%20Roma%20RM!5e0!3m2!1sit!2sit!4v1710000000000!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div id="gallery-lightbox" class="lightbox">
+
+        <span class="close-lightbox" onclick="closeLightbox()">×</span>
+
+        <span class="nav-lightbox prev" onclick="changeLightboxImg(-1)">❮</span>
+
+        <img class="lightbox-content" id="lightbox-img" src="">
+
+        <span class="nav-lightbox next" onclick="changeLightboxImg(1)">❯</span>
+
+    </div>
+
+
+
+    <script>
+
+        let itinerario = {};
+
+        let currentTappa = 0;
+
+        let lightboxList = [];
+
+        let currentLightboxIdx = 0;
+
+
+
+        const mappaFoto = {
+
+            0: ["https://i.ibb.co/hF2c4RcL/IMG-7199.jpg","https://i.ibb.co/ZzJpp5MP/IMG-7209.jpg", "https://i.ibb.co/ZtV8R4d/IMG-7210.jpg"],
+
+            1: ["https://i.ibb.co/wFqZDtvT/IMG-6951.jpg" , "https://i.ibb.co/xtCqMxdF/IMG-6950.jpg", "https://i.ibb.co/F41HCydv/IMG-6949.jpg"],
+
+            2: ["https://i.ibb.co/jPLnZrGh/IMG-6961.jpg", "https://i.ibb.co/0y1wW5K5/IMG-6963.jpg", "https://i.ibb.co/7xB70cY3/IMG-6962.jpg"],
+
+            3: ["https://i.ibb.co/7NgF2SPn/IMG-6965.jpg", "https://i.ibb.co/Nd2hBMS1/IMG-6964.jpg"],
+
+            4: ["https://i.ibb.co/WpGtYTvp/IMG-6972.jpg", "https://i.ibb.co/QFZpVcHx/IMG-6971.jpg"]
+
+        };
+
+
+
+        fetch('data.json')
+
+            .then(r => r.json())
+
+            .then(data => {
+
+                itinerario = data.itinerari[0];
+
+                document.getElementById('main-desc').innerText = itinerario.descrizione;
+
+                aggiornaMappa(itinerario.tappe[0].coordinate);
+
+                initHomeGallery();
+
+            });
+
+// --- AGGIUNGI QUESTE VARIABILI E FUNZIONI ---
+let currentImgIdx = 0;
+let gallerySrcs = [];
+
+function initGalleriaDinamica() {
+    const images = document.querySelectorAll('.grid-galleria img');
+    gallerySrcs = Array.from(images).map(img => img.src);
+
+    images.forEach((img, index) => {
+        img.onclick = () => {
+            currentImgIdx = index;
+            openLB();
+        };
+    });
+}
+
+function openLB() {
+    document.getElementById('lightboxImg').src = gallerySrcs[currentImgIdx];
+    document.getElementById('lightboxOverlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLB() {
+    document.getElementById('lightboxOverlay').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function changeImg(step) {
+    currentImgIdx += step;
+    if (currentImgIdx >= gallerySrcs.length) currentImgIdx = 0;
+    if (currentImgIdx < 0) currentImgIdx = gallerySrcs.length - 1;
+    document.getElementById('lightboxImg').src = gallerySrcs[currentImgIdx];
+}
+
+// Supporto tastiera
+document.addEventListener('keydown', (e) => {
+    const overlay = document.getElementById('lightboxOverlay');
+    if (overlay && overlay.style.display === 'flex') {
+        if (e.key === "Escape") closeLB();
+        if (e.key === "ArrowRight") changeImg(1);
+        if (e.key === "ArrowLeft") changeImg(-1);
+    }
+});
+
+// Attiva la galleria al caricamento
+document.addEventListener('DOMContentLoaded', initGalleriaDinamica);
+
+        function aggiornaMappa(coords) {
+
+            const url = `https://maps.google.com/maps?q=${coords[0]},${coords[1]}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+
+            document.getElementById('mappa-preview').src = url;
+
+        }
+
+
+
+        function mostraDettaglio() {
+
+            document.getElementById('sezione-itinerario').style.display = 'block';
+
+            renderTappa();
+
+            window.location.hash = "sezione-itinerario";
+
+        }
+
+
+
+        function renderTappa() {
+
+            const t = itinerario.tappe[currentTappa];
+
+            const target = document.getElementById('target-itinerario');
+
+            const displayIndietro = (currentTappa === 0) ? 'none' : 'block';
+
+
+
+            let listaFoto = mappaFoto[currentTappa] || ["https://via.placeholder.com/450x450?text=Foto"];
+
+            let miniatureHTML = listaFoto.map((img, idx) => `
+
+                <img src="${img}" class="thumb-tappa" onclick="document.getElementById('foto-principale-tappa').src='${img}'">
+
+            `).join('');
+
+
+
+            target.innerHTML = `
+
+                <div class="tappa-left">
+
+                    <div class="tappa-img-box">
+
+                        <img id="foto-principale-tappa" src="${listaFoto[0]}" onclick="openLightboxTappa()">
+
+                    </div>
+
+                    <div class="galleria-tappa-mini">${miniatureHTML}</div>
+
+                    <div style="margin-top:15px; color:#4a90e2; font-size:12px; font-weight:bold;">
+
+                        ${currentTappa === 0 ? '🏁 PUNTO DI PARTENZA' : '📍 DISTANZA: ' + t.tempo_spostamento_da_tappa_precedente.distanza_km + ' KM'}
+
+                    </div>
+
+                </div>
+
+                <div class="tappa-right">
+
+                    <h4>${t.esperienza_culturale.cinema.film_completo}</h4>
+
+                    <h2>${t.numero}. ${t.nome}</h2>
+
+                    <div style="font-size:13px; opacity:0.7">Orario: ${t.orario_consigliato} | Durata: ${t.durata_visita_min} min</div>
+
+                    <p style="line-height:1.6; font-size:14px;">${t.descrizione_breve}</p>
+
+                    <div class="actions-row">
+
+                        <a href="${t.esperienza_culturale.cinema.youtube_url}" target="_blank" class="btn-action" style="background:#ff0000; border:none;"><i class="fab fa-youtube"></i> Guarda Scena</a>
+
+                        <button class="btn-action" onclick="togglePhoto()"><i class="fas fa-camera"></i> Consiglio Foto</button>
+
+                    </div>
+
+                    <div id="photo-tip-box">${t.esperienza_culturale.atmosfera.consiglio_fotografico}</div>
+
+                    <div class="delon-focus">
+
+                        <h5 style="color:#4a90e2; margin-bottom:5px; text-transform:uppercase; font-size:10px;">Connessione con Delon</h5>
+
+                        <p style="font-size:13px; line-height:1.4;">${t.connessione_delon}</p>
+
+                        <div style="margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.1); font-style:italic; font-size:11px; opacity:0.6;">
+
+                            <b>Lo sapevi che?</b> ${t.curiosita}
+
+                        </div>
+
+                    </div>
+
+                    <div class="nav-buttons">
+
+                        <button class="btn-blue" style="background:transparent; border:1px solid white; display:${displayIndietro}" onclick="muovi(-1)">Tappa precedente</button>
+
+                        <button class="btn-blue" onclick="muovi(1)">Tappa successiva</button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            aggiornaMappa(t.coordinate);
+
+        }
+
+// Cerca una parte di codice simile a questa:
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        itinerario = data.itinerari[0]; // Carica i dati
+        
+        // --- QUESTA RIGA È FONDAMENTALE ---
+        renderTappa(); 
+        // ----------------------------------
+
+        aggiornaMappa(itinerario.tappe[0].coordinate);
+    });
+
+        function muovi(passo) {
+
+            currentTappa += passo;
+
+            if (currentTappa < 0) currentTappa = itinerario.tappe.length - 1;
+
+            if (currentTappa >= itinerario.tappe.length) currentTappa = 0;
+
+            renderTappa();
+
+        }
+
+
+
+        function togglePhoto() {
+
+            const box = document.getElementById('photo-tip-box');
+
+            box.style.display = box.style.display === 'block' ? 'none' : 'block';
+
+        }
+
+
+
+        function initHomeGallery() {
+
+            document.querySelectorAll('.grid-galleria img').forEach((img, idx, array) => {
+
+                img.onclick = () => {
+
+                    lightboxList = Array.from(array).map(i => i.src);
+
+                    currentLightboxIdx = idx;
+
+                    document.getElementById('lightbox-img').src = lightboxList[currentLightboxIdx];
+
+                    document.getElementById('gallery-lightbox').style.display = 'flex';
+
+                };
+
+            });
+
+        }
+
+
+
+        function openLightboxTappa() {
+
+            lightboxList = mappaFoto[currentTappa] || [];
+
+            currentLightboxIdx = 0;
+
+            if(lightboxList.length > 0) {
+
+                document.getElementById('lightbox-img').src = lightboxList[0];
+
+                document.getElementById('gallery-lightbox').style.display = 'flex';
+
+            }
+
+        }
+
+
+
+        function changeLightboxImg(step) {
+
+            currentLightboxIdx += step;
+
+            if (currentLightboxIdx >= lightboxList.length) currentLightboxIdx = 0;
+
+            if (currentLightboxIdx < 0) currentLightboxIdx = lightboxList.length - 1;
+
+            document.getElementById('lightbox-img').src = lightboxList[currentLightboxIdx];
+
+        }
+
+
+
+        function closeLightbox() {
+
+            document.getElementById('gallery-lightbox').style.display = 'none';
+
+        }
+
+
+
+        window.onclick = function(e) {
+
+            if (e.target == document.getElementById('gallery-lightbox')) closeLightbox();
+
+        }
+        // Logica per far apparire il tasto quando si scende con il mouse
+window.addEventListener('scroll', function() {
+    const backButton = document.getElementById('backToHome');
+    // Se l'utente ha sceso più di 400px di pagina, mostra il tasto
+    if (window.scrollY > 400) {
+        backButton.classList.add('visible');
+    } else {
+        backButton.classList.remove('visible');
+    }
+});
+
+// Quando clicca sul tasto, torna in cima dolcemente
+document.getElementById('backToHome').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+    </script>
+    <div id="lightboxOverlay" class="lightbox-overlay">
+    <span class="lb-close" onclick="closeLB()">&times;</span>
+    <button class="lb-arrow lb-prev" onclick="changeImg(-1)">&#10094;</button>
+    <img id="lightboxImg" class="lightbox-img" src="">
+    <button class="lb-arrow lb-next" onclick="changeImg(1)">&#10095;</button>
+</div>
+<a href="#" id="backToHome" class="back-to-home">
+    <i class="fas fa-home"></i>
+    <span>Home</span>
+</a>
+</body>
+
+</html>
