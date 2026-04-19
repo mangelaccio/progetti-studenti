@@ -1,0 +1,307 @@
+{
+  "itinerari": [
+    {
+      "id": "Valadier_Architetto_Agnese",
+      "nome": "La Città Armonica",
+      "sottotitolo": "Il disegno di Valadier tra pietra e paesaggio",
+      "personaggio": {
+        "nome": "Giuseppe Valadier",
+        "anni": "1762-1839",
+        "professione": "Architetto",
+        "nazionalita": "Italiana",
+        "biografia_breve":"Giuseppe Valadier fu un architetto romano tra i principali esponenti del neoclassicismo. Lavorò soprattutto a Roma dove realizzò importanti interventi urbanistici, tra le più importanti la sitemazione di Piazza del Popolo.",
+      "immagine": "https://static2-viaggi.corriereobjects.it/wp-content/uploads/2025/09/roma.jpg?v=574319"
+      },
+    "tema": "Forme Geometriche - Struttura e Ordine ",
+    "categoria": "Arte e Architettura",
+    "durata_totale_ore": 5,
+    "difficolta": "media",
+    "immagine_copertina": "https://static2-viaggi.corriereobjects.it/wp-content/uploads/2025/09/roma.jpg?v=574319",
+    "distanza_totale_km": 7,
+    "periodo_consigliato": "Primavera/Autunno (temperature miti)",
+    "stagione_migliore": [ "aprile", "maggio",  "ottobre", "novembre"],
+    "descrizione": "Attraversa il cuore di Roma seguendo il segno di Giuseppe Valadier. Il percorso non è solo un itinerario fisico, ma un viaggio intellettuale che racconta la metamorfosi del caos in armonia. Dalla grandiosità delle piazze alla minuzia del dettaglio tecnico, questa passeggiata rivela una Roma razionale, elegante e profondamente umana: una città incisa nel travertino con la mano sapiente di un maestro d'altri trmpi.",
+    "note_logistiche": "Iniziare primo pomeriggio. Portare acqua e scarpe comode vista la durata della passeggiata. Per vivere a pieno l'esperienza dotarsi di una piccola cornice di cartone, aiuterà a isolare i cannocchiali prospettici che Valadier ha creato come se stessi guardando attraverso l'obiettivo di una macchina fotografica.",
+    "accessibilita": "Le tappe sono tutte accesssibili a piedi o tramite l'ausilio di metro A e B. Per Pincio utilizzare scalinata esattamente dietri la fontana della dea romana.",
+    "costo_stimato": "Gratuito",
+    "tappe": [
+        {
+          "numero": 1,
+          "poi_id": "colosseo_sperone_valadier",
+          "orario_consigliato": "14:00",
+          "momento_giornata": "Primo pomeriggio",
+          "durata_visita_min": 45,
+          "coordinate": [41.89021, 12.49223],
+          "nome": "Colosseo",
+          "descrizione_breve": "La passeggiata inizia nel cuore archeologico di Roma, dove Valadier indossa le vesti di pioniere del restauro moderno.",
+          "indicazioni_arrivo": "Metro B Colosseo, oppure tram linea 3 fermata Piazza del Colosseo. Consiglio tecnico all'uscita metro b Colosseo.",
+          "esperienza_culturale": {
+            "musica": {
+              "movimento": "III. Minuetto",
+              "brano_completo": "Quintetto per archi n. 5 in mi maggiore",
+              "compositore": "Luigi Boccherini",
+              "durata_sec": 210,
+              "tonalita": "Mi maggiore",
+              "organico": "Quintetto d'archi",
+              "anno_composizione": 1771,
+              "descrizione_musicale": "Una melodia trasparente e cristallina che incarna l'ideale di bellezza neoclassica: equilibrio, grazia e proporzione.",
+              "spotify_url": "https://www.google.com/search?q=https://open.spotify.com/track/4G86m8m3k8m7Fh2U4p3K8m",
+              "youtube_url": "https://www.youtube.com/watch?v=2AZOknKotVc",
+              "note_ascolto": "Avvia l'ascolto mentre ti trovi di fronte allo sperone Valadier, lasciati guidare dal ritmo regolare e galante del Minuetto di Boccherini. Proprio come ogni nota del quintetto d'archi ha un suo ruolo preciso e ordinato, così ogni mattone posato da Valadier non cerca di fingere di essere antico, ma dichiara con onestà la sua funzione di sostegno."
+            },
+            "letteratura": {
+              "citazione": "Tutto ciò che ho immaginato si trova ora dinanzi a me; tutto è diventato realtà. qui si sente l'impronta della mente umana che domina la materia.",
+              "autore": "Johann Wolfgang von Goethe",
+              "opera": "Viaggio in Italia",
+              "anno": 1816,
+              "contesto": "Goethe descrive lo stupore nel vedere le rovine antiche che tornano a essere parte integrante della vita moderna attraverso la ragione architettonica."
+            },
+            "atmosfera": {
+              "momento": "Primo pomeriggio",
+              "luce": "Zenitale e intensa, che scolpisce i volumi.",
+              "suoni_ambiente": [
+                "Mormorio costante dei visitatori",
+                "Fruscio del vento tra le arcate",
+                "Rumore lontano del traffico urbano"
+              ],
+              "temperatura_stimata": "18-22°C",
+              "affollamento": "Alto (zona massimo flusso turistico)",
+              "consiglio_fotografico": "Inquadra lo sperone dal basso verso l'alto per esaltare la geometria dei mattoni contro il cielo.",
+              "emozione_target": "Stupore razionale e senso di protezione dell'antico."
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Neoclassico",
+              "architetti": ["Giuseppe Valadier"],
+              "anno_costruzione": "1807",
+              "committente": "Papa Pio VII",
+              "descrizione": "Intervento pioneristico di consolidamento strutturale. Valadier utilizza laterizio (mattone) per creare un contrafforte moderno che sostiene le arcate originali in travertino."
+            }
+          },
+          "storia": "A seguito del violento terremoto del 1806, l'estremità orientale del Colosseo rischiò il crollo. Papa Pio VII affidò l'intervento d'urgenza a Giuseppe Valadier, che in soli sette mesi progettò e realizzò lo sperone in mattoni.",
+          "curiosita": "Osservando bene lo sperone, noterai che Valadier ha inserito i mattoni di taglio per richiamare la forma delle grandi pietre di travertino manacanti, creando un'illusione ottica che mantiene l'armonia estetica senza ingannare l'occhio.",
+          "metadata": {
+            "accessibilita": "Osservazione dall'esterno gratuita",
+            "orari_standard": "Sempre accessibile",
+            "servizi": ["punto panoramico", "area pedonale", "colonnine informative"]
+          }
+        },
+        {
+          "numero": 2,
+          "poi_id": "passeggiata_del_pincio",
+          "orario_consigliato": "16:15",
+          "momento_giornata": "Tardo pomeriggio",
+          "durata_visita_min": 45,
+          "coordinate": [41.9111, 12.47791],
+          "nome": "Passeggiata del Pincio",
+          "descrizione_breve": "Il primo parco pubblico di Roma, dove Valadier realizza un cannocchiale prospettico mozzafiato sulla città e su San Pietro.",
+          "indicazioni_arrivo": "Da Piazza del Popolo, risalire le rampe monumentali dietro la Fontana della Dea Roma",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "45 min",
+            "metro": "20 min + attese",
+            "distanza_km": 3
+          },
+          "esperienza_culturale": {
+            "musica": {
+              "movimento": "I. Allegro vivace",
+              "brano_completo": "Sinfonia n. 4 Italiana",
+              "compositore": "Felix Mendelssohn Bartholdy",
+              "durata_sec": 600,
+              "tonalita": "La maggiore",
+              "descrizione_musicale": "Un inno alla luce dell'Italia. Il ritmo incalzante e la melodia aperta riflettono l'entusiasmo dei viaggiatori del Grand Tour che risalivano il Pincio per ammirare il panrama della Città Eterna.",
+              "strumenti_protagonisti": ["violini", "viole", "violoncelli", "contrabbassi"],
+              "carattere": "Solare, brillante",
+              "spotify_url": "https://www.google.com/search?q=https://open.spotify.com/intl-it/track/5uC6SbeC2X59H73f6H0K7X%3Fsi%3D63a5e8e7c65c4f2e",
+              "youtube_url": "https://www.google.com/search?q=https://www.youtube.com/watch%3Fv%3DH7m_S-WpXkY",
+              "note_ascolto": "Avvia il brano mentre percorri le rampe curve di Valadier che portano al colle. La musica cresce d'intensità man mano che la vista su Piazza del Popolo si apre, raggiungendo il culmine quando arrivi alla Terrazza del Pincio."
+            },
+            "letteratura": {
+              "citazione": "Oh Roma! Mia patria! Città dell'anima! Il cuore di chiunque non sia un barbaro si volge a te, e in te trova la sua pace.",
+              "autore": "Lord Byron",
+              "opera": "Il pellegrinaggio del giovane Aroldo",
+              "anno": 1818,
+              "contesto": "Byron scrisse questi versi proprio mentre Valadier stava ultimando i lavori del Pincio. La citazione riflette il sentimento di appartenenza universale che si prova guardando Roma dall'alto di questo giardino."
+            },
+            "atmosfera": {
+              "momento": "tramonto",
+              "luce": "Arancio e oro",
+              "suoni_ambiente": [
+                "fruscio delle foglie",
+                "chiacchiere lontane",
+                "artisti di strada"
+              ],
+              "temperatura_stimata": "15-19°C",
+              "affollamento": "Medio-alto (momento preferito dei romani)",
+              "consiglio_fotografico": "Usa il grandangolo per catturare la simmetria perfetta tra l'obelisco di Piazza del Popolo e la Cupola di San Pietro in lontananza.",
+              "emozione_target": "Infinita meraviglia, armonia, respiro profondo"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Architettura del paesaggio",
+              "architetti": "Giuseppe Valadier",
+              "anno_costruzione": "1810-1818",
+              "committente": "Papa Pio VII",
+              "descrizione": "Valadier trasforma un colle di vigne in un giardino munumentale. Progetta le rampe curve che collegano la piazza al colle, permettendo alle carrozze di salire senza fatica e creando una quinta scenografia unica al mondo."
+            }
+          },
+          "storia": "Il progetto nacque durante l'occupazione francese per dare a Roma un parco moderno come quelli di Parigi, ma fu completato sotto il Papa, diventando il salotto all'aperto della nobiltà romana." ,
+          "curiosita": "Valadier inserì nel parco anche un idrocronometro e un a 'casina' per godere privatamente della vista.",
+          "metadata": {
+            "accessibilita": "Gratuito, le rampe sono larghe ma in pendenza.",
+            "orari_standard": "24/7",
+            "servizi": ["bar/ristorante Casina Valadier", "terrazza panoramica"]
+          }
+        },
+        {
+          "numero": 3,
+          "poi_id": "piazza_popolo",
+          "orario_consigliato": "17:15",
+          "momento_giornata": "Tardo pomeriggio",
+          "durata_visita_min": 30,
+          "coordinate": [41.91101, 12.4762],
+          "nome": "Piazza del Popolo",
+          "descrizione_breve": "L'abbraccio monumentale di Roma: un'ellisse perfetta che accoglie il viaggiatore tra obelischi, fontane e chiese gemelle.",
+          "indicazioni_arrivo": "Dal Pincio: 5 min a piedi scendendo lungo le rampe.",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "5 min",
+            "distanza_km": 0.3
+          },
+          "esperienza_culturale": {
+            "musica": {
+              "movimento": "I. Allegro vivace",
+              "brano_completo": "Guglielmo Tell- Ouverture",
+              "compositore": "Gioachino Rossini",
+              "durata_sec": 200,
+              "tonalita": "Mi maggiore",
+              "descrizione_musicale": "Un'esplosione di energia neoclassica: il ritmo galoppante degli archi e gli squilli eroici delle trombe celebrano la perfezione geometrica dell'ellisse di Valadier. Una musica matematica e trionfale che trasforma la piazza in un immenso palcoscenico a cielo aperto.",
+              "carattere": "Travolgente, eroico, celebrativo",
+              "spotify_url": "https://open.spotify.com/track/07LWbIN7PFKZoqLrkbXYKn?si=z8hR41FyS2SB2hwseVD3TQ",
+              "youtube_url": "https://youtu.be/jo-4QPs1Gso?is=HVWpY_C-iuE1Snuf",
+              "note_ascolto": "Avvia il brano quando metti piede al centro della piazza, vicino all'obelisco. Lascia che la crescita rossiniana ti faccia girare su te stesso per ammirare le due esedre curve progettate da Valadier."
+            },
+            "letteratura": {
+              "citazione": "Questa piazza è uno dei luoghi più belli del mondo; l'occhio vi si riposa con una soddisfazione completa.",
+              "autore": "Stendhal",
+              "opera": "Passeggiate Romane",
+              "anno": 1829,
+              "contesto": "L'autore descrive la perfezione della simmetria di Valadier, che riesce a dare ordine a tre strade diverse convergendo in un unico sguardo."
+            },
+            "atmosfera": {
+              "momento": "Tramonto incipiente",
+              "luce": "Radente, ombre lunghe",
+              "suoni_ambiente": [
+                "echi di passi sul selciato",
+                "voci di passanti",
+                "zampillo delle fontane",
+                "rintocchi delle campane"
+              ],
+              "temperatura_stimata": "14-17°C (caldo pieno)",
+              "affollamento": "Alto (picco turistico)",
+              "consiglio_fotografico": "Posizionati esattamente sull'asse centrale tra l'Obelisco e il Pincio per catturare la simmetria perfetta dei due emicicli laterali.",
+              "emozione_target": "Senso di accoglienza, ordine razionale, solennità urbana"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Urbanistica Neoclassica",
+              "architetto": "Giuseppe Valadier",
+              "anno_costruzione": "1811-1822",
+              "committente": "Governo Napoleonico",
+              "dimensioni": "24m altezza",
+              "acqua_fonte": "Acquedotto Acqua Vergine (19 a.C.)",
+              "descrizione": "Valadier trasforma la vecchia piazza trapezoidale in un'ellisse, aggiungendo i due emicicli (muri curvi) decorati con statue e fontane, collegandola magistralmente al colle del Pincio sopra di essa."
+            }
+          },
+          "storia": "Per secoli è stata la porta d'ingresso a Roma per chi veniva da Nord. Valadier la ripensò come un teatro a cielo aperto per impressionare chiunque entrasse in città.",
+          "curiosita": "Le due fontane laterali servivano a Valadier non solo per estetica, ma per nascondere le asimmetrie degli edifici preesistenti.",
+        "metadata": {
+            "accessibilita": "gratuito, sempre accessibile",
+            "orari_standard": "24/7",
+            "servizi": ["taxi", "caffè storici", "Info Point"],
+            "warning": "Attenzione ai borseggiatori in zona affollata"
+          }
+        },
+        {
+          "numero": 4,
+          "poi_id": "ponte_milvio_torretta_valadier",
+          "orario_consigliato": "18:30",
+          "momento_giornata": "Tramonto",
+          "durata_visita_min": 20,
+          "coordinate": [41.93579, 12.46683],
+          "nome": "Ponte Milvio e la Torretta Valadier",
+          "descrizione_breve": "L'antico ponte romano trasformato da Valadier in un ingresso scenografico, dominato dalla torretta neoclassica a forma di arco di trionfo.",
+          "indicazioni_arrivo": "Da Piazza del Popolo: Tram linea 2 da Piazzale Flaminio → Piazza Mancini (capolinea) + 5 min a piedi verso il fiume. Oppure 40 min a piedi attraverso pista ciclabile/pedonale lungo l'argine del Tevere che conduce direttamente sotto le arcate del ponte.",
+          "tempo_spostamento_da_tappa_precedente": {
+            "a_piedi": "40 min",
+            "tram_piedi": "15 min",
+            "distanza_km": 3.5
+          },
+          "esperienza_culturale": {
+            "musica": {
+              "movimento": "Capriccio n. 24 in La minore",
+              "brano_completo": "24 Capricci per violino solo",
+              "compositore": "Niccolò Paganini",
+              "durata_sec": 260,
+              "tonalita": "La minore",
+              "descrizione_musicale": "Le variazioni di Paganini, con i loro salti e arpeggi rapidissimi, richiamano i riflessi guizzanti del sole sull'acqua del Tevere, mentre la struttura rigorosa del tema centrale omaggia la simmetria della Torretta.",
+              "carattere": "Brillante, tecnico, impetuoso",
+              "spotify_url": "https://open.spotify.com/intl-it/track/6cC6h5E351deEGFd7Kh9uy?si=7c68c3b784324997",
+              "youtube_url": "https://youtu.be/WMLoBXgPil8?si=O2TLe3uHGDQC0gqp",
+              "note_ascolto": "Inizia l'ascolto mentre attraversi il ponte a piedi. Lascia che il violino di Paganini accompagni i tuoi passi tra i lampioni sttta settentrionale.orici fino alla Torre"
+            },
+            "letteratura": {
+              "citazione": "Il Tevere, biondo e sonnolente, si snodava tra i marmi pallidi di Ponte Milvio, dove l'arco di Valadier pareva sorvegliare l'eternità della corrente.",
+              "autore": "Gabriele D'Annunzio",
+              "opera": "Il Piacere",
+              "anno": 1889,
+              "contesto": "In questo passaggio, D'Annunzio celebra la nobiltà del marmo di Valadier che si specchia nll'acqua 'bionda' (fangosa) del fiume. E' il contrasto perfetto tra la purezza del Neoclassicismo e la forza selvaggia della natura tiberina."
+            },
+            "atmosfera": {
+              "momento": "tramonto",
+              "luce": "Blu, crepuscolare, riflessi gialli",
+              "suoni_ambiente": [
+                "scorrere impetuoso dell'acqua sotto le arcate",
+                "voci dei giovani romani",
+                "vento che soffia lungo l'asse del fiume"
+              ],
+              "temperatura_stimata": "12-15°C",
+              "affollamento": "Alto (zona movida romana)",
+              "consiglio_fotografico": "Sfrutta l'ora blu per catturare il contrasto tra il travertino bianco della Torretta e il blu profondo del cielo romano.",
+              "emozione_target": "Solidità Storica, malinconia"
+            },
+            "arte_visiva": {
+              "stile_architettonico": "Neoclassico",
+              "architetto": "Giuseppe Valadier",
+              "anno_costruzione": "1805",
+              "committente": "Papa Pio VII",
+              "descrizione": "Valadier abbatte i vecchi ponti levatoi e le fortificazioni medievali per costruire la Torretta, un  edificio-porta che funge da belvedere e da arco celebrativo."
+            }
+          },
+          "storia": "Nel 1805, Ponte Milvio era in condizioni critiche: le antiche strutture romane erano soffocate da fortificazioni medievali caotiche e ponti levatoi di legno fatiscenti.",
+          "curiosita": "Valadier scelse di usare il marmo travertino per la Torretta in modo da richiamare i materiali del Colosseo e dei monumenti antichi, dando un senso di continuità alla storia di Roma.",
+          "metadata": {
+            "accessibilita": "Gratuito, completamente accessibile e pedonale",
+            "orari_standard": "Sempre accessibile",
+            "servizi": ["numerosi ristoranti", "fermata bus", "area pedonale"]
+          }
+        }
+      ],
+      "mappa_percorso": {
+        "polyline_encoded": "{tt~Fm{fkAsaClxApAxH{{Cpz@",
+        "colore_percorso": "#D4AF37",
+        "stile_linea": "solid"
+      },
+      "consigli_pratici": [
+        "Portare bottiglia d'acqua riutilizzabile (fontanelle romane lungo il percorso)",
+        "Scarpe comode obbligatorie (7 km a piedi)",
+        "Cuffie di buona qualità per ascoltare la musica",
+        "Considerare pausa merenda dopo Piazza del Popolo (molti ristoranti/bar in zona)"
+      ],
+      "migliore_periodo_anno": "Marzo-Maggio o Ottobre (luce migliore, temperature miti)",
+      "sconsigliato": ["Piena estate (troppo caldo)", "Pieno inverno (serve luce forte)"],
+      "cosa_portare": [
+        "Smartphone con app mappe",
+        "Cuffie/auricolari",
+        "Bottiglia acqua",
+        "Snack energetici",
+        "Batteria portatile"
+      ]
+    }
+  ]
+}
